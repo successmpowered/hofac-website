@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Node / tooling
+node_modules/
+.wrangler/
+.dev.vars
+
+# Env
+.env
+.env.*
