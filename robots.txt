@@ -1,8 +1,6 @@
-User-agent: *
-Allow: /
-
-# Repository files that are served because the site root is the repo root.
-Disallow: /README.md
-Disallow: /wrangler.jsonc
+# Cloudflare prepends a managed robots.txt block above this content, including
+# its own "User-agent: *" group. A second "User-agent: *" group here would be a
+# duplicate that not every crawler merges correctly, so this file carries only
+# the sitemap reference, which is group-independent.
 
 Sitemap: https://hofac.org/sitemap.xml
