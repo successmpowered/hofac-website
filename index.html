@@ -23,16 +23,16 @@
        Blue #222D65 (280c) · Red #CE202F (186c) · Yellow #FFCE02 (116c)
      ========================================================== */
   :root{
-    --blue:#222D65;
+    --blue:#002169;
     --blue-deep:#1A2350;
-    --red:#CE202F;
-    --yellow:#FFCE02;
+    --red:#CE102C;
+    --yellow:#FFCD00;
     --paper:#FAF8F4;
     --paper-2:#F0EDE6;
     --ink:#26262B;
     --muted:#565E8C;
     --muted-on-blue:#B9BFDE;
-    --line-on-blue:rgba(255,255,255,.22);
+    --line-on-blue:rgba(255,255,255,.22);--line:rgba(0,33,105,.14);
     --maxw:1100px;
     --textw:46rem;
   }
@@ -52,18 +52,18 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
 
   /* ---------- header ---------- */
-  header{position:sticky;top:0;z-index:50;background:var(--blue);border-bottom:1px solid var(--line-on-blue)}
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;
        padding:1rem 1.5rem;max-width:var(--maxw);margin:0 auto;gap:1rem}
   /* clear space = height of the crown on all sides, per the guide */
   .brand img{height:68px;width:auto;padding:8px 0}
   nav.menu{display:flex;gap:1.6rem}
-  nav.menu a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;
+  nav.menu a{color:var(--blue);text-decoration:none;font-size:.9rem;font-weight:500;
              padding:.35rem 0;border-bottom:2px solid transparent}
   nav.menu a:hover,nav.menu a[aria-current="page"]{border-bottom-color:var(--yellow)}
   a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
     outline:3px solid var(--yellow);outline-offset:2px}
-  header a:focus-visible{outline-color:#fff}
+  header a:focus-visible{outline-color:var(--blue)}
 
   /* ---------- bands ---------- */
   .band-blue{background:var(--blue);color:#fff}
@@ -87,12 +87,12 @@
   .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem}
   /* clear space: at least the crown height around the mark */
   .hero .mark{width:min(168px,38vw);margin-bottom:.4rem}
-  .hero h1{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:600;color:#fff}
-  .hero .stand{max-width:38rem;color:#EDEFF8;font-weight:300;font-size:1.1rem}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:600;color:var(--blue)}
+  .hero .stand{max-width:38rem;color:var(--ink);font-weight:300;font-size:1.1rem}
   .principles{display:flex;align-items:center;justify-content:center;gap:1.1rem;flex-wrap:wrap;
-              font-size:.85rem;font-weight:600;letter-spacing:.24em;color:#fff}
+              font-size:.85rem;font-weight:600;letter-spacing:.24em;color:var(--blue)}
   .principles .dot{width:5px;height:5px;border-radius:50%;background:var(--yellow)}
-  .hero .reg{font-size:.85rem;color:var(--muted-on-blue)}
+  .hero .reg{font-size:.85rem;color:var(--muted)}
 
   /* ---------- principles ---------- */
   .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem;margin-top:2.4rem}
@@ -183,7 +183,7 @@
 <header>
   <div class="nav">
     <a href="#/" class="brand" data-nav aria-label="The House of All Faiths and Communities, home">
-      <img src="assets/hofac-main-white.svg" alt="The House of All Faiths &amp; Communities" width="910" height="408">
+      <img src="assets/hofac-main-colour.svg" alt="The House of All Faiths &amp; Communities" width="910" height="408">
     </a>
     <nav class="menu" aria-label="Main">
       <a href="#/about" data-nav data-page-link="about">About</a>
@@ -196,10 +196,9 @@
 <!-- ======================= HOME ======================= -->
 <main id="home" class="page active">
 
-  <section class="hero band-blue">
+  <section class="hero band-paper">
     <div class="wrap hero-inner">
-      <img class="mark" src="assets/hofac-ligature-white.svg" alt="The Ligature of Faiths" width="763" height="947">
-      <p class="eyebrow">The House of All Faiths &amp; Communities</p>
+      <img class="mark" src="assets/hofac-stacked-colour.svg" alt="The House of All Faiths &amp; Communities" width="369" height="617">
       <h1>A common inheritance,<br>a shared responsibility.</h1>
       <p class="stand">HOFAC brings together the faith and community traditions of the United Kingdom to preserve our shared cultural inheritance and to strengthen the society we hold in common.</p>
       <div class="principles" aria-label="Our three principles">
