@@ -96,10 +96,14 @@
 
   /* ---------- principles ---------- */
   .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem;margin-top:2.4rem}
-  .principle{border-top:1px solid var(--line-on-blue);padding-top:1.3rem}
-  .principle h3{font-size:.95rem;letter-spacing:.24em;font-weight:600;margin-bottom:.9rem;color:#fff}
-  .principle p{color:#E8EAF4;font-weight:300;font-size:.98rem}
-  .closing{margin-top:3rem;text-align:center;color:var(--muted-on-blue);
+  .principle{border-top:1px solid var(--line);padding-top:1.3rem}
+  .band-blue .principle{border-top-color:var(--line-on-blue)}
+  .principle h3{font-size:.95rem;letter-spacing:.24em;font-weight:600;margin-bottom:.9rem;color:var(--blue)}
+  .band-blue .principle h3{color:#fff}
+  .principle p{color:var(--ink);font-weight:300;font-size:.98rem}
+  .band-blue .principle p{color:#E8EAF4}
+  .band-blue .closing{color:var(--muted-on-blue)}
+  .closing{margin-top:3rem;text-align:center;color:var(--muted);
            font-size:1.02rem;font-weight:300;font-style:italic}
 
   /* ---------- preservation ---------- */
@@ -210,7 +214,7 @@
     </div>
   </section>
 
-  <section class="band-paper center">
+  <section class="band-blue center">
     <div class="wrap">
       <h2>What we are</h2>
       <hr class="rule-y">
@@ -222,9 +226,9 @@
     </div>
   </section>
 
-  <section class="band-blue">
+  <section class="band-neutral">
     <div class="wrap">
-      <h2 class="center" style="color:#fff">The principles that hold us</h2>
+      <h2 class="center">The principles that hold us</h2>
       <div class="cols3">
         <div class="principle">
           <h3>RESPECT</h3>
@@ -243,7 +247,7 @@
     </div>
   </section>
 
-  <section class="band-neutral">
+  <section class="band-paper">
     <div class="wrap split">
       <div>
         <h2>Preserving what we hold in common</h2>
@@ -260,7 +264,7 @@
     </div>
   </section>
 
-  <section class="band-paper">
+  <section class="band-neutral">
     <div class="wrap">
       <h2 class="center">How an organisation takes part</h2>
       <div class="steps">
@@ -296,7 +300,7 @@
     </div>
   </section>
 
-  <section class="band-neutral center contact-strip">
+  <section class="band-paper center contact-strip">
     <div class="wrap">
       <h2>Speak to us</h2>
       <hr class="rule-y">
