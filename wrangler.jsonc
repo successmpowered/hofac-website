@@ -1,0 +1,9 @@
+{
+  // Static-asset Worker for the HOFAC site.
+  // The repository root is uploaded as-is; there is no build step.
+  "name": "hofac-website",
+  "compatibility_date": "2026-08-18",
+  "assets": {
+    "directory": "./"
+  }
+}
