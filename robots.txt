@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Repository files that are served because the site root is the repo root.
+Disallow: /README.md
+Disallow: /wrangler.jsonc
+
+Sitemap: https://hofac.org/sitemap.xml
