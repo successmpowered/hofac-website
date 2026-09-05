@@ -57,7 +57,7 @@
        padding:1rem 1.5rem;max-width:var(--maxw);margin:0 auto;gap:1rem}
   /* clear space = height of the crown on all sides, per the guide */
   .brand img{height:68px;width:auto;padding:8px 0}
-  nav.menu{display:flex;gap:1.6rem}
+  nav.menu{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:1.6rem;row-gap:.5rem}
   nav.menu a{color:var(--blue);text-decoration:none;font-size:.9rem;font-weight:500;
              padding:.35rem 0;border-bottom:2px solid transparent}
   nav.menu a:hover,nav.menu a[aria-current="page"]{border-bottom-color:var(--yellow)}
@@ -152,7 +152,8 @@
   .objects li{padding-left:2.2rem;position:relative;margin-top:.45rem;font-size:.97rem}
   .objects li span.marker{position:absolute;left:0;color:var(--muted);font-weight:500}
   .objects-note{font-size:.85rem;color:var(--muted);font-style:italic;margin-bottom:1rem}
-  .charter-page{min-height:60vh;display:flex;align-items:center}
+  .charter-page .prose{max-width:44rem;margin-left:auto;margin-right:auto;text-align:left}
+  .charter-page h1,.charter-page .draft-flag{text-align:center}
 
   /* ---------- form ---------- */
   form{max-width:34rem;margin-top:2rem}
@@ -241,6 +242,11 @@
   .route h3{font-size:1rem;font-weight:600;color:var(--blue);margin-bottom:.5rem}
   .route p{font-size:.95rem;color:#45454C;font-weight:300;line-height:1.55}
 
+
+  /* ---------- founder sayings ---------- */
+  .sayings{max-width:44rem;margin:1.6rem auto 2rem;display:grid;gap:1.4rem}
+  .sayings blockquote{margin:0;border-left:3px solid var(--yellow);padding:.2rem 0 .2rem 1.4rem}
+  .sayings blockquote p{font-size:1.15rem;line-height:1.45;font-weight:300;color:var(--blue)}
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
     .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
@@ -248,6 +254,11 @@
     .people{grid-template-columns:repeat(3,1fr);gap:1rem}
   }
   @media(max-width:560px){
+    /* six nav items wrap to two rows on a phone; keep the sticky header shallow */
+    .brand img{height:40px}
+    .nav{padding:.7rem 1.1rem}
+    nav.menu{gap:.9rem;row-gap:.35rem;font-size:.82rem}
+    nav.menu a{font-size:.82rem}
     .routes{grid-template-columns:1fr;gap:1.5rem}
     .themes{grid-template-columns:1fr;gap:1.5rem}
     .founder-block{grid-template-columns:1fr;gap:1.3rem}
@@ -266,7 +277,9 @@
       <img src="assets/hofac-main-colour.svg" alt="The House of All Faiths &amp; Communities" width="910" height="408">
     </a>
     <nav class="menu" aria-label="Main">
+      <a href="#/" data-nav data-page-link="home">Home</a>
       <a href="#/about" data-nav data-page-link="about">About</a>
+      <a href="#/founder" data-nav data-page-link="founder">Founder</a>
       <a href="#/charter" data-nav data-page-link="charter">The Charter</a>
       <a href="#/apply" data-nav data-page-link="apply">Apply</a>
       <a href="#/contact" data-nav data-page-link="contact">Contact</a>
@@ -287,7 +300,7 @@
         <span>RESPONSIBILITY</span><span class="dot" aria-hidden="true"></span>
         <span>ACCOUNTABILITY</span>
       </div>
-      <p class="reg">A registered Scottish charity, SC055598.</p>
+      <p class="reg">A UK-wide organisation. Registered as a Scottish charity, SC055598; registration across the wider UK is in progress.</p>
     </div>
   </section>
 
@@ -330,7 +343,6 @@
       </div>
       <p class="pull">Diversity in unity. Humanity with responsibility.</p>
       <div class="prose" style="margin-top:2.2rem">
-        <p>HOFAC grew from the aspiration of its founder, Mohanji: that the work of our generation is to help transform humankind into kind humans, and that it should begin where we live.</p>
         <p>HOFAC begins in the United Kingdom. The vision is not limited to it.</p>
       </div>
     </div>
@@ -362,7 +374,7 @@
       <h2>Neutrality is our strength</h2>
       <hr class="rule-y">
       <div class="prose">
-        <p>HOFAC does not exist to advance one religion, political ideology, community or faction over another. Mohanji likens this to the sun, which does not choose where to fall.</p>
+        <p>HOFAC does not exist to advance one religion, political ideology, community or faction over another.</p>
         <p>Neutrality here is not caution or evasion. It is the condition that allows communities who disagree with one another to sit in the same room, and it is held to deliberately.</p>
       </div>
       <p class="pull">We believe a country's culture can be cared for without defining ourselves against any community within it.</p>
@@ -445,6 +457,7 @@
     <div class="wrap">
       <div class="prose">
         <p>The House of All Faiths &amp; Communities was registered in August 2026 as a Scottish Charitable Incorporated Organisation, charity number SC055598.</p>
+        <p>HOFAC works across the whole of the United Kingdom. Our charitable registration is currently held in Scotland, and registration covering the wider UK is in progress.</p>
         <p>It was founded on a straightforward observation. Britain's faith and community organisations do a great deal of good, and much of it is invisible. At the same time, the cultural inheritance those communities hold in common is under pressure, from neglect as much as from division.</p>
         <p>HOFAC was created to address both. We bring communities together around a shared commitment to respect, responsibility and accountability, and we make the resulting work visible.</p>
 
@@ -475,17 +488,6 @@
 
         <h2 class="subhead">Our symbol</h2>
         <p>The Ligature of Faiths brings together three elements. The crown signifies both the heavens and authority, its sun drawn on the angles of the Union Jack. The linked chain, drawn in a circle, represents strength and connection. At the centre, the eternal knot represents infinite wisdom, compassion, interconnectedness and the eternal cycle of life.</p>
-
-        <h2 class="subhead">Founder &amp; Inspiration</h2>
-        <div class="founder-block">
-          <div class="portrait" data-placeholder><span class="initials">M</span></div>
-          <div>
-            <p class="name">Mohanji</p>
-            <p class="role">Founder &amp; Inspiration</p>
-            <p>HOFAC arose from Mohanji's vision of a platform through which leaders and communities could work together for harmony, responsible coexistence, the preservation of culture, and a kinder society. He describes the task of our generation as transforming humankind into kind humans, and asked that the work begin in Britain.</p>
-          </div>
-        </div>
-        <p>HOFAC is an independent Scottish charity, democratically governed by its board of trustees. It is not affiliated to any single religion, organisation or political party. Inspired by Mohanji's vision; independently and democratically governed.</p>
 
         <h2 class="subhead">Independence</h2>
         <p>HOFAC belongs to all of the communities that take part in it. It is not affiliated to any one faith, organisation or political party, and it does not require any participating organisation to share the beliefs of any other. We do not ask for agreement in matters of belief. We ask for responsibility in matters of civic life.</p>
@@ -563,6 +565,45 @@
         <p>Beneath all of them sit the three principles that HOFAC exists to practise: respect, responsibility and accountability.</p>
       </div>
       <a class="btn" href="#/contact?about=charter" data-nav>Share your thoughts on these principles</a>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= FOUNDER ======================= -->
+<main id="founder" class="page">
+  <section class="page-hero band-blue"><div class="wrap"><h1>Founder &amp; Inspiration</h1></div></section>
+  <section class="band-paper">
+    <div class="wrap">
+      <div class="founder-block">
+        <div class="portrait" data-placeholder><span class="initials">M</span></div>
+        <div>
+          <p class="name">Mohanji</p>
+          <p class="role">Founder &amp; Inspiration</p>
+          <p>HOFAC arose from Mohanji's vision of a platform through which leaders and communities could work together for harmony, responsible coexistence, the preservation of culture, and a kinder society. He asked that the work begin in Britain, and that it be open to everyone willing to take responsibility for the society they share.</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>HOFAC is an independent Scottish charity, democratically governed by its board of trustees. It is not affiliated to any single religion, organisation or political party. Inspired by Mohanji's vision; independently and democratically governed.</p>
+
+        <h2 class="subhead">In his words</h2>
+      </div>
+      <div class="sayings">
+        <blockquote>
+          <p>The work of our generation is to transform humankind into kind humans, in a world where no fear exists.</p>
+        </blockquote>
+        <blockquote>
+          <p>Neutrality is our strength. We are like the sun, and like nature, which never discriminates between species.</p>
+        </blockquote>
+        <blockquote>
+          <p>Culture is the spine of a nation. The many flavours of a country are what make the country.</p>
+        </blockquote>
+        <blockquote>
+          <p>We stand beyond religion, language, caste, creed, country, culture and colour. We stand with humanity, and with human responsibility.</p>
+        </blockquote>
+      </div>
+      <div class="prose">
+        <p class="objects-note">These passages are drawn from Mohanji's guidance to the trustees on the purpose of HOFAC.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -655,9 +696,10 @@
       </a>
       <p class="foot-tag">RESPECT · RESPONSIBILITY · ACCOUNTABILITY</p>
     </div>
-    <p class="foot-reg">The House of All Faiths &amp; Communities (HOFAC) is a Scottish Charitable Incorporated Organisation, registered in Scotland with the Office of the Scottish Charity Regulator, charity number SC055598.</p>
+    <p class="foot-reg">The House of All Faiths &amp; Communities (HOFAC) works throughout the United Kingdom and is a Scottish Charitable Incorporated Organisation, registered in Scotland with the Office of the Scottish Charity Regulator, charity number SC055598.</p>
     <nav class="foot-links" aria-label="Footer">
       <a href="#/about" data-nav>About</a>
+      <a href="#/founder" data-nav>Founder</a>
       <a href="#/charter" data-nav>The Charter</a>
       <a href="#/apply" data-nav>Apply</a>
       <a href="#/contact" data-nav>Contact</a>
@@ -668,7 +710,7 @@
 </footer>
 
 <script>
-  const pages = ["home","about","charter","apply","contact","privacy"];
+  const pages = ["home","about","founder","charter","apply","contact","privacy"];
   function route(){
     const hash = location.hash.replace(/^#\/?/,"");
     const [path, query] = hash.split("?");
