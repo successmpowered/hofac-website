@@ -200,11 +200,6 @@
             display:flex;align-items:center;justify-content:center;overflow:hidden}
   .portrait img{width:100%;height:100%;object-fit:cover;display:block}
   .portrait{position:relative}
-  .founder-block{display:grid;grid-template-columns:220px 1fr;gap:2.4rem;align-items:start;
-                 margin:1.4rem 0 .6rem}
-  .founder-block .name{font-size:1.35rem;font-weight:600;color:var(--blue);line-height:1.2}
-  .founder-block .role{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-                       color:var(--muted);margin:.45rem 0 1rem}
   .people{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:1.4rem 0 .6rem}
   .person .name{font-size:1rem;font-weight:600;color:var(--blue);margin-top:.8rem;line-height:1.25}
   .person .role{font-size:.82rem;color:var(--muted);margin-top:.2rem}
@@ -219,11 +214,6 @@
                       font-weight:400;letter-spacing:.14em;color:var(--yellow);margin-bottom:.5rem}
   .commitment h3{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.4rem}
   .commitment p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
-  .breach{max-width:44rem;margin:2.6rem auto 0;padding:1.5rem 1.7rem;text-align:left;
-          border:1px solid var(--line-on-blue);background:rgba(255,255,255,.05)}
-  .breach h3{font-size:1rem;font-weight:600;color:var(--yellow);margin-bottom:.6rem;
-             letter-spacing:.02em}
-  .breach p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
 
 
   /* ---------- apply ---------- */
@@ -243,10 +233,34 @@
   .sayings{max-width:44rem;margin:1.6rem auto 2rem;display:grid;gap:1.4rem}
   .sayings blockquote{margin:0;border-left:3px solid var(--yellow);padding:.2rem 0 .2rem 1.4rem}
   .sayings blockquote p{font-size:1.15rem;line-height:1.45;font-weight:300;color:var(--blue)}
+  /* ---------- founder page ---------- */
+  .founder-hero{display:grid;grid-template-columns:340px 1fr;gap:3.5rem;align-items:center}
+  .founder-hero .shot{width:340px;height:340px;overflow:hidden;position:relative}
+  .founder-hero .shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .founder-hero .shot::after{content:"";position:absolute;inset:0;
+        border:1px solid rgba(255,255,255,.28);pointer-events:none}
+  .founder-hero .eyebrow{color:var(--yellow)}
+  .founder-hero h1{color:#fff;font-size:clamp(2.4rem,4.6vw,3.4rem);margin:.7rem 0 0;letter-spacing:-.02em}
+  .founder-hero .signature{margin-top:1.5rem;padding-top:1.5rem;
+        border-top:1px solid var(--line-on-blue);font-size:1.3rem;line-height:1.35;
+        font-weight:300;color:#fff;max-width:26rem}
+
+  .quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.2rem;margin-top:3rem;text-align:left}
+  .quote-card{border-top:2px solid var(--yellow);padding-top:1.5rem;position:relative}
+  .quote-card p{font-size:1.12rem;line-height:1.5;font-weight:300;color:#fff;margin:0}
+  .band-paper .quote-card p,.band-neutral .quote-card p{color:var(--blue)}
+
+  .gov-note{max-width:46rem;margin:0 auto;padding:1.6rem 1.9rem;border-left:3px solid var(--yellow);
+        background:rgba(0,33,105,.045)}
+  .gov-note p{font-size:.98rem;color:#45454C;line-height:1.65;margin:0}
+
+  .lede{font-size:1.15rem;line-height:1.6;color:var(--ink)}
+
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
+    .founder-hero{grid-template-columns:260px 1fr;gap:2.4rem}
+    .founder-hero .shot{width:260px;height:260px}
     .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
-    .founder-block{grid-template-columns:200px 1fr;gap:1.6rem}
     .people{grid-template-columns:repeat(3,1fr);gap:1rem}
   }
   @media(max-width:560px){
@@ -257,10 +271,12 @@
     nav.menu a{font-size:.82rem}
     .routes{grid-template-columns:1fr;gap:1.5rem}
     .themes{grid-template-columns:1fr;gap:1.5rem}
-    .founder-block{grid-template-columns:1fr;gap:1.3rem}
-    .founder-block .portrait{max-width:190px}
+    .founder-hero{grid-template-columns:1fr;gap:1.6rem}
+    .founder-hero .shot{width:100%;height:auto;aspect-ratio:1/1}
+    .founder-hero .signature{font-size:1.15rem}
+    .quote-grid{grid-template-columns:1fr;gap:1.8rem}
+    .gov-note{padding:1.2rem 1.3rem}
     .people{grid-template-columns:1fr;gap:1.6rem;max-width:200px}
-    .breach{padding:1.2rem 1.1rem}
   }
 </style>
 </head>
@@ -566,39 +582,63 @@
 
 <!-- ======================= FOUNDER ======================= -->
 <main id="founder" class="page">
-  <section class="page-hero band-blue"><div class="wrap"><h1>Founder &amp; Inspiration</h1></div></section>
-  <section class="band-paper">
-    <div class="wrap">
-      <div class="founder-block">
-        <div class="portrait"><img src="assets/hofac-mohanji.jpg" alt="Mohanji" width="650" height="650"></div>
-        <div>
-          <p class="name">Mohanji</p>
-          <p class="role">Founder &amp; Inspiration</p>
-          <p>Dr. Brahmarishi Mohanji is a globally recognised humanitarian, philanthropist and spiritual leader dedicated to transforming humankind into kind humans through compassion, non-violence, responsibility and selfless service. He is the founder of several international organisations, including Mohanji Foundation, Ammucare Charitable Trust, ACT Foundation, the World Consciousness Alliance and the World Tribal Alliance, advancing humanitarian action, interfaith harmony and cultural preservation worldwide. His global work has received numerous honours, including the BRICS-CCI Global Compassion Ambassador Award for Lifetime Achievement in 2024.</p>
-          <p>HOFAC arose from Mohanji's vision of a platform through which leaders and communities could work together for harmony, responsible coexistence, the preservation of culture, and a kinder society. He asked that the work begin in Britain, and that it be open to everyone willing to take responsibility for the society they share.</p>
-        </div>
-      </div>
-      <div class="prose">
-        <p>HOFAC is an independent Scottish charity, democratically governed by its board of trustees. It is not affiliated to any single religion, organisation or political party. Inspired by Mohanji's vision; independently and democratically governed.</p>
 
-        <h2 class="subhead">In his words</h2>
-      </div>
-      <div class="sayings">
-        <blockquote>
-          <p>The work of our generation is to transform humankind into kind humans, in a world where no fear exists.</p>
-        </blockquote>
-        <blockquote>
-          <p>Neutrality is our strength. We are like the sun, and like nature, which never discriminates between species.</p>
-        </blockquote>
-        <blockquote>
-          <p>Culture is the spine of a nation. The many flavours of a country are what make the country.</p>
-        </blockquote>
-        <blockquote>
-          <p>We stand beyond religion, language, caste, creed, country, culture and colour. We stand with humanity, and with human responsibility.</p>
-        </blockquote>
+  <section class="band-blue">
+    <div class="wrap">
+      <div class="founder-hero">
+        <div class="shot">
+          <img src="assets/hofac-mohanji.jpg" alt="Mohanji" width="650" height="650">
+        </div>
+        <div>
+          <p class="eyebrow">Founder &amp; Inspiration</p>
+          <h1>Mohanji</h1>
+          <p class="signature">&ldquo;The work of our generation is to transform humankind into kind humans, in a world where no fear exists.&rdquo;</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="band-paper">
+    <div class="wrap">
+      <div class="prose">
+        <p class="lede">Dr. Brahmarishi Mohanji is a globally recognised humanitarian, philanthropist and spiritual leader dedicated to transforming humankind into kind humans through compassion, non-violence, responsibility and selfless service.</p>
+        <p>He is the founder of several international organisations, including Mohanji Foundation, Ammucare Charitable Trust, ACT Foundation, the World Consciousness Alliance and the World Tribal Alliance, advancing humanitarian action, interfaith harmony and cultural preservation worldwide. His global work has received numerous honours, including the BRICS-CCI Global Compassion Ambassador Award for Lifetime Achievement in 2024.</p>
+
+        <h2 class="subhead">The origin of HOFAC</h2>
+        <p>HOFAC arose from Mohanji's vision of a platform through which leaders and communities could work together for harmony, responsible coexistence, the preservation of culture, and a kinder society. He asked that the work begin in Britain, and that it be open to everyone willing to take responsibility for the society they share.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-blue center">
+    <div class="wrap">
+      <h2>In his words</h2>
+      <hr class="rule-y">
+      <div class="quote-grid">
+        <div class="quote-card">
+          <p>Neutrality is our strength. We are like the sun, and like nature, which never discriminates between species.</p>
+        </div>
+        <div class="quote-card">
+          <p>Culture is the spine of a nation. The many flavours of a country are what make the country.</p>
+        </div>
+        <div class="quote-card">
+          <p>We stand beyond religion, language, caste, creed, country, culture and colour. We stand with humanity, and with human responsibility.</p>
+        </div>
+        <div class="quote-card">
+          <p>Acceptance is the norm. We accept people as they are, and we renounce violence and discrimination in every form.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-neutral">
+    <div class="wrap">
+      <div class="gov-note">
+        <p>HOFAC is an independent Scottish charity, democratically governed by its board of trustees. It is not affiliated to any single religion, organisation or political party. Inspired by Mohanji's vision; independently and democratically governed.</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- ======================= APPLY ======================= -->
