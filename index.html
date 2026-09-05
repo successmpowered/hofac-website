@@ -174,7 +174,6 @@
   @media(max-width:820px){
     section{padding:3.8rem 0}
     .cols3,.steps{grid-template-columns:1fr;gap:1.8rem}
-    .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
     .split{grid-template-columns:1fr;gap:2rem}
     .foot{grid-template-columns:1fr;gap:1.8rem}
     nav.menu{gap:1rem}
@@ -194,6 +193,55 @@
   .band-blue .theme p{color:#E8EAF4}
   .claim{margin-top:2.6rem;font-size:1.05rem;font-weight:600;color:var(--blue)}
   .band-blue .claim{color:var(--yellow)}
+
+  /* ---------- people ---------- */
+  .portrait{aspect-ratio:3/4;background:var(--paper-2);border:1px solid var(--line);
+            display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  .portrait .initials{font-size:1.6rem;font-weight:300;letter-spacing:.12em;color:var(--muted)}
+  .portrait[data-placeholder]::after{content:"Photograph to follow";position:absolute;bottom:.5rem;
+            font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .portrait{position:relative}
+  .founder-block{display:grid;grid-template-columns:220px 1fr;gap:2.4rem;align-items:start;
+                 margin:1.4rem 0 .6rem}
+  .founder-block .name{font-size:1.35rem;font-weight:600;color:var(--blue);line-height:1.2}
+  .founder-block .role{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+                       color:var(--muted);margin:.45rem 0 1rem}
+  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:1.4rem 0 .6rem}
+  .person .name{font-size:1rem;font-weight:600;color:var(--blue);margin-top:.8rem;line-height:1.25}
+  .person .role{font-size:.82rem;color:var(--muted);margin-top:.2rem}
+
+  /* ---------- charter ---------- */
+  .draft-flag{display:inline-block;border:1px solid var(--yellow);color:var(--yellow);
+              font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+              padding:.35rem .9rem;border-radius:2px;margin-bottom:1.6rem}
+  .commitments{counter-reset:c;margin:2.8rem auto 0;text-align:left;max-width:44rem}
+  .commitment{counter-increment:c;display:grid;grid-template-columns:2.4rem 1fr;gap:1.1rem;
+              padding:1.3rem 0;border-top:1px solid var(--line-on-blue)}
+  .commitment::before{content:counter(c,decimal-leading-zero);font-size:.9rem;font-weight:400;
+                      color:var(--yellow);padding-top:.3rem}
+  .commitment h3{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.35rem}
+  .commitment p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
+  .breach{max-width:44rem;margin:2.6rem auto 0;padding:1.5rem 1.7rem;text-align:left;
+          border:1px solid var(--line-on-blue);background:rgba(255,255,255,.05)}
+  .breach h3{font-size:1rem;font-weight:600;color:var(--yellow);margin-bottom:.6rem;
+             letter-spacing:.02em}
+  .breach p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
+
+  /* ---------- responsive overrides (must come after the component rules) ---------- */
+  @media(max-width:820px){
+    .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
+    .founder-block{grid-template-columns:200px 1fr;gap:1.6rem}
+    .people{grid-template-columns:repeat(3,1fr);gap:1rem}
+  }
+  @media(max-width:560px){
+    .themes{grid-template-columns:1fr;gap:1.5rem}
+    .founder-block{grid-template-columns:1fr;gap:1.3rem}
+    .founder-block .portrait{max-width:190px}
+    .people{grid-template-columns:1fr;gap:1.6rem;max-width:200px}
+    .commitment{grid-template-columns:1.9rem 1fr;gap:.8rem}
+    .breach{padding:1.2rem 1.1rem}
+  }
 </style>
 </head>
 <body>
@@ -412,11 +460,41 @@
         <h2 class="subhead">Our symbol</h2>
         <p>The Ligature of Faiths brings together three elements. The crown signifies both the heavens and authority, its sun drawn on the angles of the Union Jack. The linked chain, drawn in a circle, represents strength and connection. At the centre, the eternal knot represents infinite wisdom, compassion, interconnectedness and the eternal cycle of life.</p>
 
+        <h2 class="subhead">Founder &amp; Inspiration</h2>
+        <div class="founder-block">
+          <div class="portrait" data-placeholder><span class="initials">M</span></div>
+          <div>
+            <p class="name">Mohanji</p>
+            <p class="role">Founder &amp; Inspiration</p>
+            <p>HOFAC arose from Mohanji's vision of a platform through which leaders and communities could work together for harmony, responsible coexistence, the preservation of culture, and a kinder society. He describes the task of our generation as transforming humankind into kind humans, and asked that the work begin in Britain.</p>
+          </div>
+        </div>
+        <p>HOFAC is an independent Scottish charity, democratically governed by its board of trustees. It is not affiliated to any single religion, organisation or political party. Inspired by Mohanji's vision; independently and democratically governed.</p>
+
         <h2 class="subhead">Independence</h2>
         <p>HOFAC belongs to all of the communities that take part in it. It is not affiliated to any one faith, organisation or political party, and it does not require any participating organisation to share the beliefs of any other. We do not ask for agreement in matters of belief. We ask for responsibility in matters of civic life.</p>
 
         <h2 class="subhead">Governance</h2>
         <p>HOFAC is governed by its board of trustees under Scottish charity law and is accountable to the Office of the Scottish Charity Regulator. Its entry on the Scottish Charity Register can be viewed <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=SC055598" target="_blank" rel="noopener">at the OSCR website</a>.</p>
+
+        <h2 class="subhead">Our trustees</h2>
+        <div class="people">
+          <div class="person">
+            <div class="portrait" data-placeholder><span class="initials">CG</span></div>
+            <p class="name">Christopher Greenwood</p>
+            <p class="role">Trustee</p>
+          </div>
+          <div class="person">
+            <div class="portrait" data-placeholder><span class="initials">SS</span></div>
+            <p class="name">Swami Suryananda</p>
+            <p class="role">Trustee &middot; Skanda Vale</p>
+          </div>
+          <div class="person">
+            <div class="portrait" data-placeholder><span class="initials">MD</span></div>
+            <p class="name">Michael Draper</p>
+            <p class="role">Trustee</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -424,14 +502,55 @@
 
 <!-- ======================= CHARTER ======================= -->
 <main id="charter" class="page">
-  <section class="band-blue charter-page center" style="padding:6rem 0">
+  <section class="band-blue charter-page center" style="padding:5rem 0">
     <div class="wrap">
+      <span class="draft-flag">Draft for consultation</span>
       <h1 style="color:#fff;font-size:clamp(2rem,4.5vw,2.8rem)">The HOFAC Charter</h1>
       <div class="prose" style="color:#EDEFF8;font-weight:300;margin-top:1.6rem">
-        <p>The Charter sets out what participation in HOFAC means: respect for one another, responsibility for the society we share, and accountability for what we commit to do.</p>
-        <p>It will be presented to the founding assembly in London and published in full later this year, together with the first founding signatories and their commitments to action.</p>
+        <p>The Charter is the compact between everyone who takes part in HOFAC. It sets out what members undertake to do, what they undertake never to do, and what happens if an undertaking is broken.</p>
+        <p>The wording below is a working draft. It will be presented to the founding assembly in London, adopted there, and published in full with the first founding signatories and their commitments to action.</p>
       </div>
-      <a class="btn" href="#/contact?about=charter" data-nav>Be notified when the Charter is published</a>
+
+      <div class="commitments">
+        <div class="commitment">
+          <h3>Respect every person</h3>
+          <p>We respect people of every religion, belief, background and viewpoint, and accept them as they are. We accept that people of good faith will disagree, and that lawful disagreement is part of a free society.</p>
+        </div>
+        <div class="commitment">
+          <h3>Reject hatred, discrimination and violence</h3>
+          <p>We reject violence, intimidation, hatred and discrimination in thought, word and action, and we will not incite them or excuse those who do. Where disagreement exists we seek resolution through dialogue, reason, compassion and lawful peaceful engagement.</p>
+        </div>
+        <div class="commitment">
+          <h3>Protect peaceful coexistence</h3>
+          <p>We undertake that our own communities will not harm or discriminate against others. Where any community is threatened, we stand together for its protection, whether or not it is our own.</p>
+        </div>
+        <div class="commitment">
+          <h3>Preserve culture and heritage</h3>
+          <p>We hold the cultures, traditions, languages and histories of these islands as an inheritance in trust, together with the traditions communities have brought and made part of British life. We respect the culture and the laws of the country in which we operate.</p>
+        </div>
+        <div class="commitment">
+          <h3>Take responsibility for our communities</h3>
+          <p>Leadership carries responsibility beyond one's own community. Each member commits to at least one concrete action each year and gives a public account of what was delivered.</p>
+        </div>
+        <div class="commitment">
+          <h3>Remain neutral and non-partisan</h3>
+          <p>HOFAC advances no religion, political party, ideology or faction over another. We defend culture without defining ourselves against any community, and we will not lend the HOFAC name to those who do.</p>
+        </div>
+        <div class="commitment">
+          <h3>Contribute rather than promote ourselves</h3>
+          <p>HOFAC is a platform for contribution, not promotion. It is not to be used to advance a member's own organisation, faction or interests, to sell, or to recruit.</p>
+        </div>
+      </div>
+
+      <div class="breach">
+        <h3>What happens if the Charter is broken</h3>
+        <p>These are undertakings, not sentiments. Where a member acts against the Charter, the board may require explanation, suspend the member's participation, or withdraw membership and the right to use the HOFAC name and mark. The procedure will be set out in the membership rules adopted at the founding assembly.</p>
+      </div>
+
+      <div class="prose" style="color:#EDEFF8;font-weight:300;margin-top:2.6rem">
+        <p>Beneath all seven sit the three principles of HOFAC: respect, responsibility and accountability.</p>
+      </div>
+      <a class="btn" href="#/contact?about=charter" data-nav>Comment on the draft Charter</a>
     </div>
   </section>
 </main>
