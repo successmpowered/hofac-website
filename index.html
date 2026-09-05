@@ -216,12 +216,10 @@
 
 
   /* ---------- apply ---------- */
-  .form-embed{margin:2.4rem auto 0;max-width:46rem;min-height:220px;border:1px dashed var(--line);
-              background:var(--paper-2);display:flex;flex-direction:column;align-items:center;
-              justify-content:center;text-align:center;padding:2.6rem 1.6rem;gap:.6rem}
-  .form-embed .lead{font-weight:600;color:var(--blue)}
-  .form-embed .hint{font-size:.88rem;color:var(--muted);max-width:30rem}
+  .form-embed{margin:2rem auto 0;max-width:46rem}
   .form-embed iframe{width:100%;border:0;display:block}
+  .form-fallback{max-width:46rem;margin:1.4rem auto 0;font-size:.9rem;color:var(--muted)}
+  .form-fallback a{color:var(--blue)}
   .routes{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.4rem;text-align:left}
   .route{border-top:3px solid var(--yellow);padding-top:1.15rem}
   .route h3{font-size:1rem;font-weight:600;color:var(--blue);margin-bottom:.5rem}
@@ -660,14 +658,17 @@
       </div>
 
       <h2 class="subhead" style="margin-top:3rem">Application form</h2>
-      <!-- To go live: replace the whole .form-embed div below with the embed code
-           from Google Forms (Send > < > ) or Typeform (Share > Embed).
-           Keep the iframe's width at 100% and give it a height of about 1200px. -->
       <div class="form-embed">
-        <p class="lead">The application form will appear here.</p>
-        <p class="hint">It is being prepared. In the meantime, please write to us and we will send you the details directly.</p>
-        <a class="btn" href="#/contact?about=participation" data-nav>Contact us about membership</a>
+        <!-- src is set directly rather than via data-tally-src: this page is held at
+             display:none by the router until its route is opened, and a deferred
+             iframe in a hidden subtree may never load. -->
+        <iframe
+          id="tally-apply"
+          src="https://tally.so/embed/9qkBJG?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+          title="HOFAC membership application form"
+          width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"></iframe>
       </div>
+      <p class="form-fallback">If the form does not load, please email <a href="mailto:info@hofac.org">info@hofac.org</a> and we will send you the application directly.</p>
     </div>
   </section>
 </main>
@@ -756,6 +757,7 @@
       const sel = document.getElementById("f-about");
       if(about && sel && [...sel.options].some(o=>o.value===about)) sel.value = about;
     }
+    if(target==="apply" && window.Tally) window.Tally.loadEmbeds();
     window.scrollTo(0,0);
   }
   window.addEventListener("hashchange", route);
@@ -776,5 +778,7 @@
     document.getElementById("form-note").style.display = "block";
   });
 </script>
+
+<script src="https://tally.so/widgets/embed.js" defer></script>
 </body>
 </html>
