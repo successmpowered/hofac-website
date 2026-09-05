@@ -217,12 +217,11 @@
               font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
               padding:.35rem .9rem;border-radius:2px;margin-bottom:1.6rem}
   .commitments{counter-reset:c;margin:2.8rem auto 0;text-align:left;max-width:44rem}
-  .commitment{counter-increment:c;display:grid;grid-template-columns:2.4rem 1fr;gap:1.1rem;
-              padding:1.3rem 0;border-top:1px solid var(--line-on-blue)}
-  .commitment::before{content:counter(c,decimal-leading-zero);font-size:.9rem;font-weight:400;
-                      color:var(--yellow);padding-top:.3rem}
-  .commitment h3{grid-column:2;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.35rem}
-  .commitment p{grid-column:2;font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
+  .commitment{counter-increment:c;padding:1.5rem 0;border-top:1px solid var(--line-on-blue)}
+  .commitment::before{content:counter(c,decimal-leading-zero);display:block;font-size:.82rem;
+                      font-weight:400;letter-spacing:.14em;color:var(--yellow);margin-bottom:.5rem}
+  .commitment h3{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.4rem}
+  .commitment p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
   .breach{max-width:44rem;margin:2.6rem auto 0;padding:1.5rem 1.7rem;text-align:left;
           border:1px solid var(--line-on-blue);background:rgba(255,255,255,.05)}
   .breach h3{font-size:1rem;font-weight:600;color:var(--yellow);margin-bottom:.6rem;
@@ -264,7 +263,6 @@
     .founder-block{grid-template-columns:1fr;gap:1.3rem}
     .founder-block .portrait{max-width:190px}
     .people{grid-template-columns:1fr;gap:1.6rem;max-width:200px}
-    .commitment{grid-template-columns:1.9rem 1fr;gap:.8rem}
     .breach{padding:1.2rem 1.1rem}
   }
 </style>
