@@ -228,6 +228,19 @@
              letter-spacing:.02em}
   .breach p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
 
+
+  /* ---------- apply ---------- */
+  .form-embed{margin:2.4rem auto 0;max-width:46rem;min-height:220px;border:1px dashed var(--line);
+              background:var(--paper-2);display:flex;flex-direction:column;align-items:center;
+              justify-content:center;text-align:center;padding:2.6rem 1.6rem;gap:.6rem}
+  .form-embed .lead{font-weight:600;color:var(--blue)}
+  .form-embed .hint{font-size:.88rem;color:var(--muted);max-width:30rem}
+  .form-embed iframe{width:100%;border:0;display:block}
+  .routes{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.4rem;text-align:left}
+  .route{border-top:3px solid var(--yellow);padding-top:1.15rem}
+  .route h3{font-size:1rem;font-weight:600;color:var(--blue);margin-bottom:.5rem}
+  .route p{font-size:.95rem;color:#45454C;font-weight:300;line-height:1.55}
+
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
     .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
@@ -235,6 +248,7 @@
     .people{grid-template-columns:repeat(3,1fr);gap:1rem}
   }
   @media(max-width:560px){
+    .routes{grid-template-columns:1fr;gap:1.5rem}
     .themes{grid-template-columns:1fr;gap:1.5rem}
     .founder-block{grid-template-columns:1fr;gap:1.3rem}
     .founder-block .portrait{max-width:190px}
@@ -254,6 +268,7 @@
     <nav class="menu" aria-label="Main">
       <a href="#/about" data-nav data-page-link="about">About</a>
       <a href="#/charter" data-nav data-page-link="charter">The Charter</a>
+      <a href="#/apply" data-nav data-page-link="apply">Apply</a>
       <a href="#/contact" data-nav data-page-link="contact">Contact</a>
     </nav>
   </div>
@@ -265,8 +280,8 @@
   <section class="hero band-paper">
     <div class="wrap hero-inner">
       <img class="mark" src="assets/hofac-stacked-colour.svg" alt="The House of All Faiths &amp; Communities" width="369" height="617">
-      <h1>Open to every community.<br>Binding on every member.</h1>
-      <p class="stand">HOFAC is a non-partisan house of faith, community, civic and cultural leadership. Members commit to protect people from fear and discrimination, to preserve the cultures we inherit, and to account publicly, each year, for what they said they would do.</p>
+      <h1>A common inheritance,<br>a shared responsibility.</h1>
+      <p class="stand">The House of All Faiths &amp; Communities brings together faith, community, civic and cultural leaders from across the United Kingdom. We come together to practise respect, responsibility and accountability: to help people live without fear or discrimination, to support communities in caring for one another, and to look after the cultures we have inherited.</p>
       <div class="principles" aria-label="Our three principles">
         <span>RESPECT</span><span class="dot" aria-hidden="true"></span>
         <span>RESPONSIBILITY</span><span class="dot" aria-hidden="true"></span>
@@ -281,28 +296,28 @@
       <h2>What we are</h2>
       <hr class="rule-y">
       <div class="prose">
-        <p>HOFAC is a non-partisan house of faith, community, cultural and civic leadership, committed to peace, harmony and responsible coexistence.</p>
-        <p>Britain's cultural inheritance is not held by any one community. It is carried by all of them, and it is preserved only when they take responsibility for it together. HOFAC exists to make that responsibility visible, and to hold it to account.</p>
+        <p>HOFAC is a house of faith, community, cultural and civic leadership, working towards peace, harmony and responsible coexistence. It is aligned with no single religion, party or community, and asks no one to set aside what they believe.</p>
+        <p>Britain's cultural inheritance is not held by any one community. It is carried by all of them, and it is preserved when they take responsibility for it together. HOFAC exists to make that responsibility visible.</p>
       </div>
       <div class="themes">
         <div class="theme">
-          <h3>A commitment, not a signature</h3>
-          <p>Every member commits to at least one concrete action each year and reports on what was delivered. We publish both the commitment and the outcome.</p>
+          <h3>Annual commitments</h3>
+          <p>Each member undertakes at least one piece of practical work a year and gives an account of what came of it. Both are published.</p>
         </div>
         <div class="theme">
-          <h3>Balance is protected</h3>
-          <p>An invitation that would tilt the balance of the house is not valid. No single tradition, community or faction can come to dominate it.</p>
+          <h3>A balanced house</h3>
+          <p>HOFAC is of most use when no single tradition or community predominates within it. Membership and invitations are managed with that balance in mind.</p>
         </div>
         <div class="theme">
-          <h3>Contribution, not promotion</h3>
-          <p>HOFAC is not a place to advance your own organisation, sell anything or recruit. Members are here to contribute. That is a condition of belonging.</p>
+          <h3>A place to contribute</h3>
+          <p>HOFAC is not a platform for promoting a member's own organisation or interests. Members join for the work that is held in common.</p>
         </div>
         <div class="theme">
-          <h3>The seat belongs to the office</h3>
-          <p>An institution holds its membership through its head. When the head changes, the seat passes on. This is a compact between institutions, not a network of individuals.</p>
+          <h3>Institutions, not individuals</h3>
+          <p>An organisation holds its membership through its head or senior representative. When that person changes, the membership passes to their successor.</p>
         </div>
       </div>
-      <p class="claim">Dialogue is where this work begins. It is not where it ends.</p>
+      <p class="claim">Dialogue is where this work begins, not where it ends.</p>
     </div>
   </section>
 
@@ -347,12 +362,12 @@
       <h2>Neutrality is our strength</h2>
       <hr class="rule-y">
       <div class="prose">
-        <p>HOFAC does not exist to advance one religion, political ideology, community or faction over another. Like the sun, which does not choose where to fall, it serves without discrimination.</p>
-        <p>A house that takes sides stops being a house for everyone in it. Our neutrality is not caution or evasion. It is the condition that makes the rest of this work possible, and we defend it deliberately.</p>
+        <p>HOFAC does not exist to advance one religion, political ideology, community or faction over another. Mohanji likens this to the sun, which does not choose where to fall.</p>
+        <p>Neutrality here is not caution or evasion. It is the condition that allows communities who disagree with one another to sit in the same room, and it is held to deliberately.</p>
       </div>
-      <p class="pull">We defend culture without defining ourselves against any community.</p>
+      <p class="pull">We believe a country's culture can be cared for without defining ourselves against any community within it.</p>
       <div class="prose" style="margin-top:2.2rem">
-        <p>That is a test we apply to what we publish, to whom we invite, and to every platform we lend our name to.</p>
+        <p>It is a test we apply to what we publish, to those we invite, and to the platforms we lend our name to.</p>
       </div>
     </div>
   </section>
@@ -395,6 +410,7 @@
         </div>
       </div>
       <p class="coalition">A working coalition, not a list of names.</p>
+      <div class="center"><a class="btn" href="#/apply" data-nav>Apply to join</a></div>
     </div>
   </section>
 
@@ -504,53 +520,82 @@
 <main id="charter" class="page">
   <section class="band-blue charter-page center" style="padding:5rem 0">
     <div class="wrap">
-      <span class="draft-flag">Draft for consultation</span>
+      <span class="draft-flag">Guiding principles &middot; in development</span>
       <h1 style="color:#fff;font-size:clamp(2rem,4.5vw,2.8rem)">The HOFAC Charter</h1>
       <div class="prose" style="color:#EDEFF8;font-weight:300;margin-top:1.6rem">
-        <p>The Charter is the compact between everyone who takes part in HOFAC. It sets out what members undertake to do, what they undertake never to do, and what happens if an undertaking is broken.</p>
-        <p>The wording below is a working draft. It will be presented to the founding assembly in London, adopted there, and published in full with the first founding signatories and their commitments to action.</p>
+        <p>The principles below are the ground on which HOFAC is being built. They are a guide, not a finished document, and they are offered here so that those considering joining us can see plainly what we hold to.</p>
+        <p>The Charter itself will be drawn up with our founding members, presented to the founding assembly in London, and published in full thereafter.</p>
       </div>
 
       <div class="commitments">
         <div class="commitment">
-          <h3>Respect every person</h3>
-          <p>We respect people of every religion, belief, background and viewpoint, and accept them as they are. We accept that people of good faith will disagree, and that lawful disagreement is part of a free society.</p>
+          <h3>Respect for every person</h3>
+          <p>We respect people of every religion, belief, background and viewpoint, and accept them as they are. People of good faith will disagree, and lawful disagreement is part of a free society.</p>
         </div>
         <div class="commitment">
-          <h3>Reject hatred, discrimination and violence</h3>
-          <p>We reject violence, intimidation, hatred and discrimination in thought, word and action, and we will not incite them or excuse those who do. Where disagreement exists we seek resolution through dialogue, reason, compassion and lawful peaceful engagement.</p>
+          <h3>Peace without exception</h3>
+          <p>We reject violence, intimidation, hatred and discrimination in thought, word and action. Where there is disagreement, we look for resolution through dialogue, reason and compassion.</p>
         </div>
         <div class="commitment">
-          <h3>Protect peaceful coexistence</h3>
-          <p>We undertake that our own communities will not harm or discriminate against others. Where any community is threatened, we stand together for its protection, whether or not it is our own.</p>
+          <h3>Protection of one another</h3>
+          <p>We ask that our own communities do no harm to others. Where a community is threatened, we stand together for its protection, whether or not it is our own.</p>
         </div>
         <div class="commitment">
-          <h3>Preserve culture and heritage</h3>
-          <p>We hold the cultures, traditions, languages and histories of these islands as an inheritance in trust, together with the traditions communities have brought and made part of British life. We respect the culture and the laws of the country in which we operate.</p>
+          <h3>Care for culture and heritage</h3>
+          <p>We hold the cultures, traditions, languages and histories of these islands as an inheritance in trust, together with the traditions that communities have brought and made part of British life. We respect the culture and the laws of the country in which we work.</p>
         </div>
         <div class="commitment">
-          <h3>Take responsibility for our communities</h3>
-          <p>Leadership carries responsibility beyond one's own community. Each member commits to at least one concrete action each year and gives a public account of what was delivered.</p>
+          <h3>Responsibility beyond our own</h3>
+          <p>Leadership carries a responsibility wider than one's own community. Each member undertakes practical work each year and gives an account of it.</p>
         </div>
         <div class="commitment">
-          <h3>Remain neutral and non-partisan</h3>
-          <p>HOFAC advances no religion, political party, ideology or faction over another. We defend culture without defining ourselves against any community, and we will not lend the HOFAC name to those who do.</p>
+          <h3>Neutrality</h3>
+          <p>HOFAC advances no religion, political party, ideology or faction above another, and cares for culture without defining itself against any community.</p>
         </div>
         <div class="commitment">
-          <h3>Contribute rather than promote ourselves</h3>
-          <p>HOFAC is a platform for contribution, not promotion. It is not to be used to advance a member's own organisation, faction or interests, to sell, or to recruit.</p>
+          <h3>Contribution before self-interest</h3>
+          <p>HOFAC is a place to contribute. It is not for advancing a member's own organisation or interests, and not for selling or recruiting.</p>
         </div>
       </div>
 
-      <div class="breach">
-        <h3>What happens if the Charter is broken</h3>
-        <p>These are undertakings, not sentiments. Where a member acts against the Charter, the board may require explanation, suspend the member's participation, or withdraw membership and the right to use the HOFAC name and mark. The procedure will be set out in the membership rules adopted at the founding assembly.</p>
-      </div>
 
       <div class="prose" style="color:#EDEFF8;font-weight:300;margin-top:2.6rem">
-        <p>Beneath all seven sit the three principles of HOFAC: respect, responsibility and accountability.</p>
+        <p>Beneath all of them sit the three principles that HOFAC exists to practise: respect, responsibility and accountability.</p>
       </div>
-      <a class="btn" href="#/contact?about=charter" data-nav>Comment on the draft Charter</a>
+      <a class="btn" href="#/contact?about=charter" data-nav>Share your thoughts on these principles</a>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= APPLY ======================= -->
+<main id="apply" class="page">
+  <section class="page-hero band-blue"><div class="wrap"><h1>Apply to join</h1></div></section>
+  <section class="band-paper">
+    <div class="wrap">
+      <div class="prose">
+        <p>HOFAC is open to those who lead and represent communities in the United Kingdom: faith leaders, community and cultural organisations, civic institutions, youth organisations, and others whose work brings people together.</p>
+        <p>Membership is held by an organisation through its head or senior representative. You are welcome to apply on behalf of your organisation, or to write to us first if you would prefer to talk it through.</p>
+      </div>
+      <div class="routes">
+        <div class="route">
+          <h3>By application</h3>
+          <p>Any organisation whose purpose and conduct sit comfortably alongside our principles may apply to join. Applications are considered by the board.</p>
+        </div>
+        <div class="route">
+          <h3>By invitation</h3>
+          <p>We also invite organisations and individuals directly. Invitations are made with the balance of the House in mind, so that no single tradition or community predominates.</p>
+        </div>
+      </div>
+
+      <h2 class="subhead" style="margin-top:3rem">Application form</h2>
+      <!-- To go live: replace the whole .form-embed div below with the embed code
+           from Google Forms (Send > < > ) or Typeform (Share > Embed).
+           Keep the iframe's width at 100% and give it a height of about 1200px. -->
+      <div class="form-embed">
+        <p class="lead">The application form will appear here.</p>
+        <p class="hint">It is being prepared. In the meantime, please write to us and we will send you the details directly.</p>
+        <a class="btn" href="#/contact?about=participation" data-nav>Contact us about membership</a>
+      </div>
     </div>
   </section>
 </main>
@@ -614,6 +659,7 @@
     <nav class="foot-links" aria-label="Footer">
       <a href="#/about" data-nav>About</a>
       <a href="#/charter" data-nav>The Charter</a>
+      <a href="#/apply" data-nav>Apply</a>
       <a href="#/contact" data-nav>Contact</a>
       <a href="#/privacy" data-nav>Privacy</a>
     </nav>
@@ -622,7 +668,7 @@
 </footer>
 
 <script>
-  const pages = ["home","about","charter","contact","privacy"];
+  const pages = ["home","about","charter","apply","contact","privacy"];
   function route(){
     const hash = location.hash.replace(/^#\/?/,"");
     const [path, query] = hash.split("?");
