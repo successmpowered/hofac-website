@@ -196,12 +196,9 @@
   .band-blue .claim{color:var(--yellow)}
 
   /* ---------- people ---------- */
-  .portrait{aspect-ratio:3/4;background:var(--paper-2);border:1px solid var(--line);
+  .portrait{aspect-ratio:1/1;background:var(--paper-2);border:1px solid var(--line);
             display:flex;align-items:center;justify-content:center;overflow:hidden}
   .portrait img{width:100%;height:100%;object-fit:cover;display:block}
-  .portrait .initials{font-size:1.6rem;font-weight:300;letter-spacing:.12em;color:var(--muted)}
-  .portrait[data-placeholder]::after{content:"Photograph to follow";position:absolute;bottom:.5rem;
-            font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
   .portrait{position:relative}
   .founder-block{display:grid;grid-template-columns:220px 1fr;gap:2.4rem;align-items:start;
                  margin:1.4rem 0 .6rem}
@@ -496,17 +493,17 @@
         <h2 class="subhead">Our trustees</h2>
         <div class="people">
           <div class="person">
-            <div class="portrait" data-placeholder><span class="initials">CG</span></div>
+            <div class="portrait"><img src="assets/hofac-christopher-greenwood.jpg" alt="Christopher Greenwood" width="700" height="700"></div>
             <p class="name">Christopher Greenwood</p>
             <p class="role">Trustee</p>
           </div>
           <div class="person">
-            <div class="portrait" data-placeholder><span class="initials">SS</span></div>
+            <div class="portrait"><img src="assets/hofac-swami-suryananda.jpg" alt="Swami Suryananda" width="467" height="467"></div>
             <p class="name">Swami Suryananda</p>
             <p class="role">Trustee &middot; Skanda Vale</p>
           </div>
           <div class="person">
-            <div class="portrait" data-placeholder><span class="initials">MD</span></div>
+            <div class="portrait"><img src="assets/hofac-michael-draper.jpg" alt="Michael Draper" width="500" height="500"></div>
             <p class="name">Michael Draper</p>
             <p class="role">Trustee</p>
           </div>
@@ -573,7 +570,7 @@
   <section class="band-paper">
     <div class="wrap">
       <div class="founder-block">
-        <div class="portrait" data-placeholder><span class="initials">M</span></div>
+        <div class="portrait"><img src="assets/hofac-mohanji.jpg" alt="Mohanji" width="650" height="650"></div>
         <div>
           <p class="name">Mohanji</p>
           <p class="role">Founder &amp; Inspiration</p>
