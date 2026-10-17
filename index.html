@@ -318,6 +318,7 @@
       <a href="#/about" data-nav data-page-link="about">About</a>
       <a href="#/founder" data-nav data-page-link="founder">Founder</a>
       <a href="#/declaration" data-nav data-page-link="declaration">Declaration</a>
+      <a href="#/house" data-nav data-page-link="house">The House</a>
       <a href="#/apply" data-nav data-page-link="apply">Apply</a>
       <a href="#/contact" data-nav data-page-link="contact">Contact</a>
     </nav>
@@ -564,28 +565,6 @@
           </div>
         </div>
 
-        <h2 class="subhead">Advisors to The House</h2>
-        <div class="gov-note" style="margin:1.2rem 0 1.8rem">
-          <p>Advisors to The House are senior figures from faith, cultural and civic life who lend HOFAC their counsel and their standing. They are not trustees and take no part in the governance of the charity, which rests with the board under Scottish charity law. Their role is to advise, to open doors, and to hold the House to the standards it has set for itself.</p>
-        </div>
-        <div class="people">
-          <div class="person">
-            <div class="portrait pending"><span class="initials">RM</span></div>
-            <p class="name">Rajiv Malhotra</p>
-            <p class="role">Advisor to The House</p>
-          </div>
-          <div class="person">
-            <div class="portrait pending"><span class="initials">GSK</span></div>
-            <p class="name">Dame Gloria Starr Kins</p>
-            <p class="role">Advisor to The House</p>
-          </div>
-          <div class="person">
-            <div class="portrait pending"><span class="initials">GS</span></div>
-            <p class="name">Goswami Sushil Ji Maharaj</p>
-            <p class="role">Advisor to The House</p>
-            <p class="note">Maharishi Bhrigu Peethadhishwar and National Convenor of the Bhartiya Sarva Dharma Sansad</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -690,6 +669,60 @@
   </section>
 </main>
 
+<!-- ======================= THE HOUSE ======================= -->
+<main id="house" class="page">
+  <section class="page-hero band-blue"><div class="wrap"><h1>The House</h1></div></section>
+
+  <section class="band-paper">
+    <div class="wrap">
+      <div class="prose">
+        <p class="lede">The House is made up of those who lead and represent communities, and of those who lend it their counsel and their standing.</p>
+        <p>HOFAC is governed by its board of trustees under Scottish charity law. Patrons, advisors and members take no part in that governance. Their standing within the House is a matter of contribution and commitment, not control.</p>
+      </div>
+
+      <h2 class="subhead" style="margin-top:3rem">Advisors to The House</h2>
+      <div class="gov-note" style="margin:1.2rem 0 1.8rem">
+        <p>Advisors to The House are senior figures from faith, cultural and civic life who lend HOFAC their counsel and their standing. Their role is to advise, to open doors, and to hold the House to the standards it has set for itself.</p>
+      </div>
+      <div class="people">
+          <div class="person">
+            <div class="portrait pending"><span class="initials">RM</span></div>
+            <p class="name">Rajiv Malhotra</p>
+            <p class="role">Advisor to The House</p>
+          </div>
+          <div class="person">
+            <div class="portrait pending"><span class="initials">GSK</span></div>
+            <p class="name">Dame Gloria Starr Kins</p>
+            <p class="role">Advisor to The House</p>
+          </div>
+          <div class="person">
+            <div class="portrait pending"><span class="initials">GS</span></div>
+            <p class="name">Goswami Sushil Ji Maharaj</p>
+            <p class="role">Advisor to The House</p>
+            <p class="note">Maharishi Bhrigu Peethadhishwar and National Convenor of the Bhartiya Sarva Dharma Sansad</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="band-neutral">
+    <div class="wrap">
+      <h2 class="subhead" style="margin-top:0">Patrons</h2>
+      <div class="gov-note" style="margin:1.2rem 0 1.8rem">
+        <p>Patrons are distinguished figures who lend their name and public support to the work of the House. Patrons will be announced in due course.</p>
+      </div>
+
+      <h2 class="subhead" style="margin-top:2.8rem">Members</h2>
+      <div class="gov-note" style="margin:1.2rem 0 1.8rem">
+        <p>Membership is held by an organisation through its head or senior representative: faith communities, community and cultural organisations, civic institutions and others whose work brings people together. Founding members will be named following the founding assembly.</p>
+      </div>
+      <div class="prose">
+        <p><a href="#/apply" data-nav>Apply to join the House</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
 <!-- ======================= APPLY ======================= -->
 <main id="apply" class="page">
   <section class="page-hero band-blue"><div class="wrap"><h1>Apply to join</h1></div></section>
@@ -786,6 +819,7 @@
       <a href="#/about" data-nav>About</a>
       <a href="#/founder" data-nav>Founder</a>
       <a href="#/declaration" data-nav>Declaration</a>
+      <a href="#/house" data-nav>The House</a>
       <a href="#/apply" data-nav>Apply</a>
       <a href="#/contact" data-nav>Contact</a>
       <a href="#/privacy" data-nav>Privacy</a>
@@ -795,7 +829,7 @@
 </footer>
 
 <script>
-  const pages = ["home","about","founder","declaration","apply","contact","privacy"];
+  const pages = ["home","about","founder","declaration","house","apply","contact","privacy"];
   function route(){
     const hash = location.hash.replace(/^#\/?/,"");
     const [path, query] = hash.split("?");
