@@ -139,10 +139,12 @@
 
   /* ---------- assembly + buttons ---------- */
   .assembly .prose{max-width:36rem}
-  .btn{display:inline-block;margin-top:2rem;padding:.85rem 2rem;border:1.5px solid #fff;color:#fff;
+  .btn{display:inline-block;margin-top:2rem;padding:.85rem 2rem;border:1.5px solid var(--blue);color:var(--blue);
        text-decoration:none;font-size:.9rem;font-weight:600;letter-spacing:.06em;border-radius:2px;
        transition:background .2s,color .2s}
-  .btn:hover{background:#fff;color:var(--blue)}
+  .btn:hover{background:var(--blue);color:#fff}
+  .band-blue .btn{border-color:#fff;color:#fff}
+  .band-blue .btn:hover{background:#fff;color:var(--blue)}
 
   /* ---------- contact strip ---------- */
   .contact-strip .email{display:inline-block;margin-top:1.6rem;font-size:1.25rem;font-weight:600;
@@ -272,6 +274,14 @@
   .signatories .group{margin-top:1.8rem}
   .decl-actions{max-width:44rem;margin:2.4rem auto 0}
 
+  .lede-line{font-size:1.2rem;font-weight:500;margin-bottom:1.15rem}
+  /* portrait placeholder, used until an advisor photograph is supplied */
+  .portrait.pending{background:var(--paper-2)}
+  .portrait.pending .initials{font-size:1.5rem;font-weight:300;letter-spacing:.1em;color:var(--muted)}
+  .portrait.pending::after{content:"Photograph to follow";position:absolute;bottom:.55rem;left:0;right:0;
+      font-size:.62rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+  .person .note{font-size:.84rem;color:var(--muted);margin-top:.35rem;line-height:1.45}
+
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
     .founder-hero{grid-template-columns:260px 1fr;gap:2.4rem}
@@ -335,6 +345,7 @@
       <h2>What we are</h2>
       <hr class="rule-y">
       <div class="prose">
+        <p class="lede-line">We must speak when the public cannot. This is why HOFAC was formed.</p>
         <p>HOFAC is a house of faith, community, cultural and civic leadership, working towards peace, harmony and responsible coexistence. It is aligned with no single religion, party or community, and asks no one to set aside what they believe.</p>
         <p>Britain's cultural inheritance is not held by any one community. It is carried by all of them, and it is preserved when they take responsibility for it together. HOFAC exists to make that responsibility visible.</p>
       </div>
@@ -371,6 +382,19 @@
       <div class="prose" style="margin-top:2.2rem">
         <p>HOFAC begins in the United Kingdom. The vision is not limited to it.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="band-paper center">
+    <div class="wrap">
+      <p class="eyebrow">Signed by our founder and trustees</p>
+      <h2 style="margin-top:.8rem">The HOFAC Declaration</h2>
+      <hr class="rule-y">
+      <p class="pull">We are HOFAC. We are responsible faith leaders without hierarchies.</p>
+      <div class="prose" style="margin-top:2rem">
+        <p>Our founding statement sets out what HOFAC stands for and what those who lead communities owe to one another.</p>
+      </div>
+      <a class="btn" href="#/declaration" data-nav>Read the Declaration</a>
     </div>
   </section>
 
@@ -537,6 +561,29 @@
             <div class="portrait"><img src="assets/hofac-michael-draper.jpg" alt="Michael Draper" width="500" height="500"></div>
             <p class="name">Judge Professor Michael Draper</p>
             <p class="role">Trustee</p>
+          </div>
+        </div>
+
+        <h2 class="subhead">Advisors to The House</h2>
+        <div class="gov-note" style="margin:1.2rem 0 1.8rem">
+          <p>Advisors to The House are senior figures from faith, cultural and civic life who lend HOFAC their counsel and their standing. They are not trustees and take no part in the governance of the charity, which rests with the board under Scottish charity law. Their role is to advise, to open doors, and to hold the House to the standards it has set for itself.</p>
+        </div>
+        <div class="people">
+          <div class="person">
+            <div class="portrait pending"><span class="initials">RM</span></div>
+            <p class="name">Rajiv Malhotra</p>
+            <p class="role">Advisor to The House</p>
+          </div>
+          <div class="person">
+            <div class="portrait pending"><span class="initials">GSK</span></div>
+            <p class="name">Dame Gloria Starr Kins</p>
+            <p class="role">Advisor to The House</p>
+          </div>
+          <div class="person">
+            <div class="portrait pending"><span class="initials">GS</span></div>
+            <p class="name">Goswami Sushil Ji Maharaj</p>
+            <p class="role">Advisor to The House</p>
+            <p class="note">Maharishi Bhrigu Peethadhishwar and National Convenor of the Bhartiya Sarva Dharma Sansad</p>
           </div>
         </div>
       </div>
