@@ -169,8 +169,6 @@
   .objects li{padding-left:2.2rem;position:relative;margin-top:.45rem;font-size:.97rem}
   .objects li span.marker{position:absolute;left:0;color:var(--muted);font-weight:500}
   .objects-note{font-size:.85rem;color:var(--muted);font-style:italic;margin-bottom:1rem}
-  .charter-page .prose{max-width:44rem;margin-left:auto;margin-right:auto;text-align:left}
-  .charter-page h1,.charter-page .draft-flag{text-align:center}
 
   /* ---------- form ---------- */
   form{max-width:34rem;margin-top:2rem}
@@ -221,16 +219,6 @@
   .person .name{font-size:1rem;font-weight:600;color:var(--blue);margin-top:.8rem;line-height:1.25}
   .person .role{font-size:.82rem;color:var(--muted);margin-top:.2rem}
 
-  /* ---------- charter ---------- */
-  .draft-flag{display:inline-block;border:1px solid var(--yellow);color:var(--yellow);
-              font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-              padding:.35rem .9rem;border-radius:2px;margin-bottom:1.6rem}
-  .commitments{counter-reset:c;margin:2.8rem auto 0;text-align:left;max-width:44rem}
-  .commitment{counter-increment:c;padding:1.5rem 0;border-top:1px solid var(--line-on-blue)}
-  .commitment::before{content:counter(c,decimal-leading-zero);display:block;font-size:.82rem;
-                      font-weight:400;letter-spacing:.14em;color:var(--yellow);margin-bottom:.5rem}
-  .commitment h3{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.4rem}
-  .commitment p{font-size:.96rem;font-weight:300;color:#E8EAF4;line-height:1.6}
 
 
   /* ---------- apply ---------- */
@@ -271,6 +259,19 @@
 
   .lede{font-size:1.15rem;line-height:1.6;color:var(--ink)}
 
+  /* ---------- declaration ---------- */
+  .decl{max-width:44rem;margin:0 auto}
+  .decl-open{font-size:1.45rem;line-height:1.45;font-weight:300;color:var(--blue);
+             border-left:3px solid var(--yellow);padding:.2rem 0 .2rem 1.5rem;margin-bottom:2.2rem}
+  .decl p{margin-bottom:1.15rem;line-height:1.75}
+  .decl .emphatic{font-weight:500;color:var(--blue)}
+  .signatories{max-width:44rem;margin:0 auto;padding-top:2rem;border-top:1px solid var(--line)}
+  .signatories .who{font-size:.76rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+                    color:var(--muted);margin-bottom:.7rem}
+  .signatories .sig{font-size:1.05rem;font-weight:600;color:var(--blue);line-height:1.5}
+  .signatories .group{margin-top:1.8rem}
+  .decl-actions{max-width:44rem;margin:2.4rem auto 0}
+
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
     .founder-hero{grid-template-columns:260px 1fr;gap:2.4rem}
@@ -306,7 +307,7 @@
       <a href="#/" data-nav data-page-link="home">Home</a>
       <a href="#/about" data-nav data-page-link="about">About</a>
       <a href="#/founder" data-nav data-page-link="founder">Founder</a>
-      <a href="#/charter" data-nav data-page-link="charter">The Charter</a>
+      <a href="#/declaration" data-nav data-page-link="declaration">Declaration</a>
       <a href="#/apply" data-nav data-page-link="apply">Apply</a>
       <a href="#/contact" data-nav data-page-link="contact">Contact</a>
     </nav>
@@ -432,8 +433,8 @@
       <div class="steps">
         <div class="step">
           <div class="num">01</div>
-          <h3>Endorse the Charter</h3>
-          <p>An organisation endorses the HOFAC Charter and nominates a senior representative to speak for it.</p>
+          <h3>Endorse the Declaration</h3>
+          <p>An organisation endorses the HOFAC Declaration and nominates a senior representative to speak for it.</p>
         </div>
         <div class="step">
           <div class="num">02</div>
@@ -456,7 +457,7 @@
       <p class="eyebrow">London · Autumn 2026</p>
       <h2 style="color:#fff;margin-top:1rem">The founding assembly</h2>
       <div class="prose" style="color:#EDEFF8;font-weight:300">
-        <p>Later this year, senior representatives of Britain's faith and community traditions will gather in London to establish HOFAC, to receive the Charter and to make the first commitments to action.</p>
+        <p>Later this year, senior representatives of Britain's faith and community traditions will gather in London to establish HOFAC and to make the first commitments to action.</p>
         <p>Every major faith tradition will be represented, alongside minority communities.</p>
       </div>
       <a class="btn" href="#/contact?about=assembly" data-nav>Register your interest</a>
@@ -525,7 +526,7 @@
           <div class="person">
             <div class="portrait"><img src="assets/hofac-christopher-greenwood.jpg" alt="Christopher Greenwood" width="700" height="700"></div>
             <p class="name">Christopher Greenwood</p>
-            <p class="role">Trustee</p>
+            <p class="role">Trustee &amp; Chief Executive</p>
           </div>
           <div class="person">
             <div class="portrait"><img src="assets/hofac-swami-suryananda.jpg" alt="Swami Suryananda" width="467" height="467"></div>
@@ -534,62 +535,11 @@
           </div>
           <div class="person">
             <div class="portrait"><img src="assets/hofac-michael-draper.jpg" alt="Michael Draper" width="500" height="500"></div>
-            <p class="name">Michael Draper</p>
+            <p class="name">Judge Professor Michael Draper</p>
             <p class="role">Trustee</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= CHARTER ======================= -->
-<main id="charter" class="page">
-  <section class="band-blue charter-page center" style="padding:5rem 0">
-    <div class="wrap">
-      <span class="draft-flag">Guiding principles &middot; in development</span>
-      <h1 style="color:#fff;font-size:clamp(2rem,4.5vw,2.8rem)">The HOFAC Charter</h1>
-      <div class="prose" style="color:#EDEFF8;font-weight:300;margin-top:1.6rem">
-        <p>The principles set out below indicate the ground on which HOFAC is being built. They are offered as a guide, so that those considering joining us can see plainly what we hold to.</p>
-        <p>The founding Charter will broadly align with these principles. It will be drawn up with our founding members, ratified by the House at the founding assembly in London, and published in full thereafter.</p>
-      </div>
-
-      <div class="commitments">
-        <div class="commitment">
-          <h3>Respect for every person</h3>
-          <p>We respect people of every religion, belief, background and viewpoint, and accept them as they are. People of good faith will disagree, and lawful disagreement is part of a free society.</p>
-        </div>
-        <div class="commitment">
-          <h3>Peace without exception</h3>
-          <p>We reject violence, intimidation, hatred and discrimination in thought, word and action. Where there is disagreement, we look for resolution through dialogue, reason and compassion.</p>
-        </div>
-        <div class="commitment">
-          <h3>Protection of one another</h3>
-          <p>We ask that our own communities do no harm to others. Where a community is threatened, we stand together for its protection, whether or not it is our own.</p>
-        </div>
-        <div class="commitment">
-          <h3>Care for culture and heritage</h3>
-          <p>We hold the cultures, traditions, languages and histories of these islands as an inheritance in trust, together with the traditions that communities have brought and made part of British life. We respect the culture and the laws of the country in which we work.</p>
-        </div>
-        <div class="commitment">
-          <h3>Responsibility beyond our own</h3>
-          <p>Leadership carries a responsibility wider than one's own community. Each member undertakes practical work each year and gives an account of it.</p>
-        </div>
-        <div class="commitment">
-          <h3>Neutrality</h3>
-          <p>HOFAC advances no religion, political party, ideology or faction above another, and cares for culture without defining itself against any community.</p>
-        </div>
-        <div class="commitment">
-          <h3>Contribution before self-interest</h3>
-          <p>HOFAC is a place to contribute. It is not for advancing a member's own organisation or interests, and not for selling or recruiting.</p>
-        </div>
-      </div>
-
-
-      <div class="prose" style="color:#EDEFF8;font-weight:300;margin-top:2.6rem">
-        <p>Beneath all of them sit the three principles that HOFAC exists to practise: respect, responsibility and accountability.</p>
-      </div>
-      <a class="btn" href="#/contact?about=charter" data-nav>Share your thoughts on these principles</a>
     </div>
   </section>
 </main>
@@ -653,6 +603,44 @@
     </div>
   </section>
 
+</main>
+
+<!-- ======================= DECLARATION ======================= -->
+<main id="declaration" class="page">
+  <section class="page-hero band-blue"><div class="wrap"><h1>The HOFAC Declaration</h1></div></section>
+
+  <section class="band-paper">
+    <div class="wrap">
+      <div class="decl prose">
+        <p class="decl-open">&ldquo;The world suffers a lot, not just because of the violence of the bad people, but because of the silence of the good people.&rdquo;</p>
+
+        <p class="emphatic">We must speak when the public cannot. This is why HOFAC was formed.</p>
+
+        <p>We, the faith leaders of the world must unite to ensure peace and sanctity of the world. We must, together, take the pledge that the people who follow our faith will never harm or hurt any person, any being or any property of our respective societies.</p>
+
+        <p>We have to unite all the faiths and communities of our country, our region, our world with love, harmony, kindness, selflessness, nonviolence and togetherness. We must, as faith and community leaders, uphold Responsibility, Accountability and Respect in our societies. We must distance ourselves from hypocrisy of all kinds and should be bold enough to speak out loud when any people of any community disrespect our pledge of harmony and solidarity.</p>
+
+        <p>We have a great responsibility to maintain peace and harmony, love, hope and compassion, while following our chosen faiths, without discrimination. We are united as love and kindness incarnate. Irrespective of our faith as well as political inclination, we shall only respond with love and understanding of every situation of the society. Nobody is higher or lower. Nobody is better or worse. We have to protect the helpless strata of our society. We have to denounce violence of all kinds. We have to quarantine the harmful of our society irrespective of their faith and political inclinations. We have to always maintain righteousness, harmony and peace in our societies.</p>
+
+        <p class="emphatic">We are HOFAC. We are responsible faith leaders without hierarchies.</p>
+
+        <p class="emphatic">We are all responsible for the well being as well as the conduct of people of our faith whom we lead. We are here to ensure everyone who is born on earth has a justified existence and a complete life.</p>
+      </div>
+
+      <div class="signatories">
+        <p class="who">Founder</p>
+        <p class="sig">Mohanji</p>
+        <div class="group">
+          <p class="who">Trustees</p>
+          <p class="sig">Christopher Greenwood<br>Judge Professor Michael Draper<br>Swami Suryananda, Skanda Vale</p>
+        </div>
+      </div>
+
+      <div class="decl-actions">
+        <a class="btn" href="assets/hofac-declaration.pdf" target="_blank" rel="noopener">Download the Declaration (PDF)</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ======================= APPLY ======================= -->
@@ -731,7 +719,7 @@
     <div class="wrap"><div class="prose">
       <p>The House of All Faiths &amp; Communities (HOFAC) respects your privacy.</p>
       <p>If you contact us through this website or by email, we will use the details you provide only to respond to your enquiry and to correspond with you about the matter you raise. We do not share your details with any other organisation, and we do not use them for marketing.</p>
-      <p>If you ask to be notified about the publication of the Charter or about HOFAC events, we will keep your name and email address for that purpose only, and we will remove them if you ask us to.</p>
+      <p>If you ask to be notified about HOFAC events, we will keep your name and email address for that purpose only, and we will remove them if you ask us to.</p>
       <p>To ask about the information we hold about you, or to ask us to remove it, email <a href="mailto:info@hofac.org">info@hofac.org</a>.</p>
       <p>HOFAC is a Scottish Charitable Incorporated Organisation, charity number SC055598.</p>
     </div></div>
@@ -750,7 +738,7 @@
     <nav class="foot-links" aria-label="Footer">
       <a href="#/about" data-nav>About</a>
       <a href="#/founder" data-nav>Founder</a>
-      <a href="#/charter" data-nav>The Charter</a>
+      <a href="#/declaration" data-nav>Declaration</a>
       <a href="#/apply" data-nav>Apply</a>
       <a href="#/contact" data-nav>Contact</a>
       <a href="#/privacy" data-nav>Privacy</a>
@@ -760,7 +748,7 @@
 </footer>
 
 <script>
-  const pages = ["home","about","founder","charter","apply","contact","privacy"];
+  const pages = ["home","about","founder","declaration","apply","contact","privacy"];
   function route(){
     const hash = location.hash.replace(/^#\/?/,"");
     const [path, query] = hash.split("?");
