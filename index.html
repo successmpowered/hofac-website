@@ -216,7 +216,7 @@
             display:flex;align-items:center;justify-content:center;overflow:hidden}
   .portrait img{width:100%;height:100%;object-fit:cover;display:block}
   .portrait{position:relative}
-  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:1.4rem 0 .6rem}
+  .people{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:1.8rem;margin:1.4rem 0 .6rem}
   .person .name{font-size:1rem;font-weight:600;color:var(--blue);margin-top:.8rem;line-height:1.25}
   .person .role{font-size:.82rem;color:var(--muted);margin-top:.2rem}
 
@@ -284,12 +284,27 @@
   .person .credit{font-size:.72rem;color:var(--muted);margin-top:.5rem;opacity:.85}
   .person .credit a{color:var(--muted)}
 
+  /* ---------- ambassadors ---------- */
+  .ambassador{display:grid;grid-template-columns:200px 1fr;gap:2.4rem;align-items:start;
+              padding:2.6rem 0;border-top:1px solid var(--line)}
+  .ambassador:first-of-type{border-top:none;padding-top:1rem}
+  .ambassador .shot{width:200px;height:200px;overflow:hidden;position:relative;background:var(--paper-2)}
+  .ambassador .shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .ambassador .shot.pending{display:flex;align-items:center;justify-content:center}
+  .ambassador .shot.pending .initials{font-size:1.9rem;font-weight:300;letter-spacing:.1em;color:var(--muted)}
+  .ambassador .name{font-size:1.5rem;font-weight:600;color:var(--blue);line-height:1.2}
+  .ambassador .role{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+                    color:var(--muted);margin:.5rem 0 1.1rem}
+  .ambassador .offices{font-size:.95rem;color:var(--blue);font-weight:500;line-height:1.5;
+                       margin-bottom:1.3rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+  .ambassador .bio p{line-height:1.7;margin-bottom:.9rem}
+  .ambassador .bio p:last-child{margin-bottom:0}
+
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
     .founder-hero{grid-template-columns:260px 1fr;gap:2.4rem}
     .founder-hero .shot{width:260px;height:260px}
     .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
-    .people{grid-template-columns:repeat(3,1fr);gap:1rem}
   }
   @media(max-width:560px){
     /* six nav items wrap to two rows on a phone; keep the sticky header shallow */
@@ -304,7 +319,7 @@
     .founder-hero .signature{font-size:1.15rem}
     .quote-grid{grid-template-columns:1fr;gap:1.8rem}
     .gov-note{padding:1.2rem 1.3rem}
-    .people{grid-template-columns:1fr;gap:1.6rem;max-width:200px}
+    .ambassador{grid-template-columns:1fr;gap:1.4rem;padding:2rem 0}
   }
 
   /* iOS Safari zooms in on any field below 16px, and does not zoom back out */
@@ -673,10 +688,14 @@
     <div class="wrap">
       <div class="prose">
         <p class="lede">The House is made up of those who lead and represent communities, and of those who lend it their counsel and their standing.</p>
-        <p>HOFAC is governed by its board of trustees under Scottish charity law. Patrons, advisors and members take no part in that governance. Their standing within the House is a matter of contribution and commitment, not control.</p>
+        <p>HOFAC is governed by its board of trustees under Scottish charity law. Patrons, advisors, ambassadors and members take no part in that governance. Their standing within the House is a matter of contribution and commitment, not control.</p>
       </div>
+    </div>
+  </section>
 
-      <h2 class="subhead" style="margin-top:3rem">Advisors to The House</h2>
+  <section class="band-neutral">
+    <div class="wrap">
+      <h2 class="subhead" style="margin-top:0">Advisors to The House</h2>
       <div class="gov-note" style="margin:1.2rem 0 1.8rem">
         <p>Advisors to The House are senior figures from faith, cultural and civic life who lend HOFAC their counsel and their standing. Their role is to advise, to open doors, and to hold the House to the standards it has set for itself.</p>
       </div>
@@ -694,11 +713,44 @@
             <p class="note">Author and founder of the Infinity Foundation, which has supported Indic studies since the 1990s. He writes on Indian civilisation, comparative religion, and the study of Indian thought in the West.</p>
           </div>
           <div class="person">
-            <div class="portrait pending"><span class="initials">GSK</span></div>
+            <div class="portrait"><img src="assets/hofac-gloria-starr-kins.jpg" alt="Dame Gloria Starr Kins" width="514" height="514"></div>
             <p class="name">Dame Gloria Starr Kins</p>
             <p class="role">Advisor to The House</p>
             <p class="note">Editor-in-chief and publisher of <em>Society &amp; Diplomatic Review</em> in New York, and a long-serving correspondent at the United Nations.</p>
           </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-paper">
+    <div class="wrap">
+      <h2 class="subhead" style="margin-top:0">Global Ambassadors</h2>
+      <div class="gov-note" style="margin:1.2rem 0 2rem">
+        <p>HOFAC Global Ambassadors are figures of distinguished standing in diplomacy and international affairs: men and women who have spent their working lives building understanding between nations, between institutions and between peoples.</p>
+        <p style="margin-top:.8rem">They represent the House in the wider world, and hold those relations to the three principles the House itself is built upon: responsibility, accountability and respect. An ambassadorship is not an honorary title.</p>
+      </div>
+      <div class="ambassador">
+        <div class="shot"><img src="assets/hofac-vladimir-bozovic.jpg" alt="Vladimir Bo&#382;ovi&#263;" width="700" height="700"></div>
+        <div>
+          <p class="name">Vladimir Bo&#382;ovi&#263;, PhD</p>
+          <p class="role">Global Ambassador</p>
+          <p class="offices">Consul General of the Republic of Serbia in New York &middot; President of the Society of Foreign Consuls in New York &middot; Chairman of the Global Consular Leadership Council of United World Leaders</p>
+          <div class="bio">
+            <p>Vladimir Bo&#382;ovi&#263; served as Ambassador of the Republic of Serbia to Montenegro from 2019 to 2023, and is the first representative of Serbia to lead the Society of Foreign Consuls in New York in more than a century of its history.</p>
+            <p>He has held senior office in Serbian public administration as Assistant Minister of Internal Affairs and Inspector General, as State Secretary responsible for internal oversight and international cooperation, and as Adviser to the Prime Minister for regional cooperation and relations with religious communities.</p>
+            <p>A lawyer by training, he holds a doctorate from the Faculty of Security Studies at the University of Belgrade and teaches as an Assistant Professor in Belgrade. He has acted as legal counsel to the Serbian Orthodox Church and to the Metropolitanate of Montenegro and the Littoral in cases concerning fundamental human and civil rights, and served as National Coordinator for Police and Human Rights at the Council of Europe.</p>
+            <p>His work has consistently joined diplomacy with the rule of law, anti-corruption and the protection of human rights.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-neutral">
+    <div class="wrap">
+      <h2 class="subhead" style="margin-top:0">Patrons</h2>
+      <div class="gov-note" style="margin:1.2rem 0 1.8rem">
+        <p>Patrons are distinguished figures who lend their name and public support to the work of the House. Patrons will be announced in due course.</p>
       </div>
 
       <h2 class="subhead" style="margin-top:2.8rem">Members</h2>
