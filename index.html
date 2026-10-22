@@ -285,20 +285,20 @@
   .person .credit a{color:var(--muted)}
 
   /* ---------- ambassadors ---------- */
-  .ambassador{display:grid;grid-template-columns:200px 1fr;gap:2.4rem;align-items:start;
+  .profile{display:grid;grid-template-columns:200px 1fr;gap:2.4rem;align-items:start;
               padding:2.6rem 0;border-top:1px solid var(--line)}
-  .ambassador:first-of-type{border-top:none;padding-top:1rem}
-  .ambassador .shot{width:200px;height:200px;overflow:hidden;position:relative;background:var(--paper-2)}
-  .ambassador .shot img{width:100%;height:100%;object-fit:cover;display:block}
-  .ambassador .shot.pending{display:flex;align-items:center;justify-content:center}
-  .ambassador .shot.pending .initials{font-size:1.9rem;font-weight:300;letter-spacing:.1em;color:var(--muted)}
-  .ambassador .name{font-size:1.5rem;font-weight:600;color:var(--blue);line-height:1.2}
-  .ambassador .role{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  .profile:first-of-type{border-top:none;padding-top:1rem}
+  .profile .shot{width:200px;height:200px;overflow:hidden;position:relative;background:var(--paper-2)}
+  .profile .shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .profile .shot.pending{display:flex;align-items:center;justify-content:center}
+  .profile .shot.pending .initials{font-size:1.9rem;font-weight:300;letter-spacing:.1em;color:var(--muted)}
+  .profile .name{font-size:1.5rem;font-weight:600;color:var(--blue);line-height:1.2}
+  .profile .role{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
                     color:var(--muted);margin:.5rem 0 1.1rem}
-  .ambassador .offices{font-size:.95rem;color:var(--blue);font-weight:500;line-height:1.5;
+  .profile .offices{font-size:.95rem;color:var(--blue);font-weight:500;line-height:1.5;
                        margin-bottom:1.3rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
-  .ambassador .bio p{line-height:1.7;margin-bottom:.9rem}
-  .ambassador .bio p:last-child{margin-bottom:0}
+  .profile .bio p{line-height:1.7;margin-bottom:.9rem}
+  .profile .bio p:last-child{margin-bottom:0}
 
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:820px){
@@ -319,7 +319,7 @@
     .founder-hero .signature{font-size:1.15rem}
     .quote-grid{grid-template-columns:1fr;gap:1.8rem}
     .gov-note{padding:1.2rem 1.3rem}
-    .ambassador{grid-template-columns:1fr;gap:1.4rem;padding:2rem 0}
+    .profile{grid-template-columns:1fr;gap:1.4rem;padding:2rem 0}
   }
 
   /* iOS Safari zooms in on any field below 16px, and does not zoom back out */
@@ -699,19 +699,31 @@
       <div class="gov-note" style="margin:1.2rem 0 1.8rem">
         <p>Advisors to The House are senior figures from faith, cultural and civic life who lend HOFAC their counsel and their standing. Their role is to advise, to open doors, and to hold the House to the standards it has set for itself.</p>
       </div>
-      <div class="people">
-          <div class="person">
-            <div class="portrait"><img src="assets/hofac-goswami-sushil.jpg" alt="Goswami Sushil Ji Maharaj" width="700" height="700"></div>
-            <p class="name">Goswami Sushil Ji Maharaj</p>
-            <p class="role">Advisor to The House</p>
-            <p class="note">Maharishi Bhrigu Peethadhishwar, head of the order at the Maharshi Bhrigu Ashram in Greater Noida, and National Convenor of the Bhartiya Sarva Dharma Sansad, the Indian parliament of all religions.</p>
+      <div class="profile">
+        <div class="shot"><img src="assets/hofac-goswami-sushil.jpg" alt="Goswami Sushil Ji Maharaj" width="700" height="700"></div>
+        <div>
+          <p class="name">Goswami Sushil Ji Maharaj</p>
+          <p class="role">Advisor to The House</p>
+          <p class="offices">Maharishi Bhrigu Peethadhishwar &middot; National Convenor of the Bhartiya Sarva Dharma Sansad</p>
+          <div class="bio">
+            <p>Goswami Sushil Ji Maharaj heads the order at the Maharshi Bhrigu Ashram in Greater Noida, and serves as National Convenor of the Bhartiya Sarva Dharma Sansad, the Indian parliament of all religions.</p>
+            <p>He is a long-standing advocate of interfaith dialogue and of Vasudhaiva Kutumbakam, the principle that the world is one family. He has carried that work to gatherings of faith and parliamentary leaders in Morocco, South Korea, Bahrain, Spain and the United Kingdom, and has taken part in humanitarian and interfaith panels in New Delhi alongside leaders of other traditions.</p>
+            <p>He has been recognised with the title Messenger of Peace and with the Nelson Mandela Global Peace Award.</p>
           </div>
-          <div class="person">
-            <div class="portrait"><img src="assets/hofac-gloria-starr-kins.jpg" alt="Dame Gloria Starr Kins" width="514" height="514"></div>
-            <p class="name">Dame Gloria Starr Kins</p>
-            <p class="role">Advisor to The House</p>
-            <p class="note">Editor-in-chief and publisher of <em>Society &amp; Diplomatic Review</em> in New York, and a long-serving correspondent at the United Nations.</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="shot"><img src="assets/hofac-gloria-starr-kins.jpg" alt="Dame Gloria Starr Kins" width="514" height="514"></div>
+        <div>
+          <p class="name">Dame Gloria Starr Kins</p>
+          <p class="role">Advisor to The House</p>
+          <p class="offices">Editor-in-Chief and Publisher, <em>Society &amp; Diplomatic Review</em>, New York</p>
+          <div class="bio">
+            <p>Dame Gloria Starr Kins is editor-in-chief and publisher of <em>Society &amp; Diplomatic Review</em>, a New York publication accredited to the United Nations and read within the diplomatic missions of the city.</p>
+            <p>She has reported from the United Nations for decades and is among the longest-serving correspondents accredited there. Through the <em>Review</em> she has chronicled the civic, cultural and philanthropic life that surrounds the diplomatic community in New York, and the causes it supports.</p>
           </div>
+        </div>
       </div>
     </div>
   </section>
@@ -723,10 +735,10 @@
         <p>HOFAC Ambassadors are figures of distinguished standing in diplomacy and international affairs: men and women who have spent their working lives building understanding between nations, between institutions and between peoples.</p>
         <p style="margin-top:.8rem">They represent the House in the wider world, and hold those relations to the three principles the House itself is built upon: responsibility, accountability and respect.</p>
       </div>
-      <div class="ambassador">
+      <div class="profile">
         <div class="shot"><img src="assets/hofac-vladimir-bozovic.jpg" alt="Vladimir Bo&#382;ovi&#263;" width="700" height="700"></div>
         <div>
-          <p class="name">Vladimir Bo&#382;ovi&#263;, PhD</p>
+          <p class="name">Ambassador Vladimir Bo&#382;ovi&#263;, PhD</p>
           <p class="role">HOFAC Ambassador</p>
           <p class="offices">Consul General of the Republic of Serbia in New York &middot; President of the Society of Foreign Consuls in New York &middot; Chairman of the Global Consular Leadership Council of United World Leaders</p>
           <div class="bio">
