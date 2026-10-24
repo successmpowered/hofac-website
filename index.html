@@ -167,6 +167,8 @@
 
   /* ---------- inner pages ---------- */
   .page-hero{padding:3.6rem 0}
+  /* the full 5.5rem section padding leaves too much air under a page hero */
+  .page-hero + section{padding-top:3.2rem}
   .page-hero h1{font-size:clamp(1.9rem,4vw,2.6rem);color:#fff}
   .subhead{font-size:1.3rem;font-weight:600;margin:2.4rem 0 .8rem;color:var(--blue)}
   .objects h4{font-size:1rem;font-weight:600;margin:1.6rem 0 .6rem}
@@ -194,6 +196,7 @@
 
   @media(max-width:820px){
     section{padding:3.8rem 0}
+    .page-hero + section{padding-top:2.4rem}
     .cols3,.steps{grid-template-columns:1fr;gap:1.8rem}
     .split{grid-template-columns:1fr;gap:2rem}
     .foot{grid-template-columns:1fr;gap:2.2rem}
@@ -328,7 +331,7 @@
   .sub-toggle:hover,.has-sub.active .sub-toggle{border-bottom-color:var(--yellow)}
     /* no gap between the button and the panel: a gap is a dead zone that closes
      the menu as the pointer crosses it */
-  .sub{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  .sub{display:none;position:absolute;top:100%;left:0;
        background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,33,105,.12);
        padding:.6rem 0;min-width:240px;z-index:60;margin-top:.55rem}
   /* an invisible bridge across that margin keeps the pointer inside the control */
@@ -431,19 +434,19 @@
     </button>
     <nav class="menu" id="main-menu" aria-label="Main">
       <a href="#/" data-nav data-page-link="home">Home</a>
-      <a href="#/about" data-nav data-page-link="about">About</a>
-      <a href="#/founder" data-nav data-page-link="founder">Founder</a>
-      <a href="#/declaration" data-nav data-page-link="declaration">Declaration</a>
       <div class="has-sub">
         <button class="sub-toggle" aria-expanded="false" aria-controls="house-sub">The House<span class="caret" aria-hidden="true"></span></button>
         <div class="sub" id="house-sub">
           <a href="#/house" data-nav data-page-link="house">Overview</a>
+          <a href="#/about" data-nav data-page-link="about">About</a>
           <a href="#/executive" data-nav data-page-link="executive">Executive Committee</a>
           <a href="#/trustees" data-nav data-page-link="trustees">Trustees</a>
           <a href="#/advisors" data-nav data-page-link="advisors">Advisors</a>
           <a href="#/ambassadors" data-nav data-page-link="ambassadors">Peace Ambassadors</a>
         </div>
       </div>
+      <a href="#/founder" data-nav data-page-link="founder">Founder</a>
+      <a href="#/declaration" data-nav data-page-link="declaration">Declaration</a>
       <a href="#/apply" data-nav data-page-link="apply">Apply</a>
       <a href="#/contact" data-nav data-page-link="contact">Contact</a>
     </nav>
@@ -1161,7 +1164,7 @@
   }));
 
   // the submenu parent stays marked while any of its pages is open
-  const housePages = ["house","executive","trustees","advisors","ambassadors"];
+  const housePages = ["house","about","executive","trustees","advisors","ambassadors"];
   const markHouse = () => {
     const path = location.hash.replace(/^#\/?/,"").split("?")[0];
     hasSub.classList.toggle("active", housePages.includes(path));
