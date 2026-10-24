@@ -352,8 +352,11 @@
        grow past the viewport and trap the page beneath it */
     nav.menu.open{display:flex;max-height:calc(100vh - 7rem);overflow-y:auto;
                   -webkit-overflow-scrolling:touch}
+    /* the accordion is a stacked list, not a cramped inline bar: size the rows
+       for reading and tapping, and keep the toggle identical to its siblings */
     nav.menu > a,.sub-toggle{padding:.85rem .2rem;border-bottom:1px solid var(--line);
-                             width:100%;text-align:left;justify-content:space-between}
+                             width:100%;text-align:left;justify-content:space-between;
+                             font-size:1rem;font-weight:500}
     nav.menu > a{border-bottom:1px solid var(--line)}
     nav.menu a:hover,nav.menu a[aria-current="page"]{border-bottom-color:var(--line)}
     nav.menu a[aria-current="page"]{color:var(--blue);font-weight:600}
@@ -361,7 +364,7 @@
     .sub-toggle{border-bottom:1px solid var(--line)}
     .sub{position:static;transform:none;border:0;box-shadow:none;min-width:0;
          padding:.2rem 0 .6rem;background:var(--paper)}
-    nav.menu .sub a{padding:.95rem 1rem;border-bottom:0}
+    nav.menu .sub a{padding:.95rem 1rem;border-bottom:0;font-size:.95rem}
   }
 
   /* ---------- The House overview cards ---------- */
@@ -399,11 +402,10 @@
     .themes{grid-template-columns:repeat(2,1fr);gap:1.6rem}
   }
   @media(max-width:560px){
-    /* six nav items wrap to two rows on a phone; keep the sticky header shallow */
+    /* keep the sticky header shallow; the nav itself is an accordion below
+       880px and is sized there, so it must not be shrunk again here */
     .brand img{height:56px}
     .nav{padding:.7rem 1.1rem}
-    nav.menu{gap:.9rem;row-gap:.35rem;font-size:.82rem}
-    nav.menu a{font-size:.82rem}
     .routes{grid-template-columns:1fr;gap:1.5rem}
     .themes{grid-template-columns:1fr;gap:1.5rem}
     .founder-hero{grid-template-columns:1fr;gap:1.6rem}
@@ -946,7 +948,7 @@
       </div>
 
       <div class="profile">
-        <div class="shot"><img src="assets/hofac-nazem-alkudsi.jpg" alt="Nazem Alkudsi" width="400" height="400"></div>
+        <div class="shot"><img src="assets/hofac-nazem-alkudsi.jpg" alt="Nazem Alkudsi, CFA" width="700" height="700"></div>
         <div>
           <p class="name">Nazem Alkudsi, CFA</p>
           <p class="role">Advisor to The House</p>
