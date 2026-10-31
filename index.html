@@ -419,6 +419,18 @@
   .foot-contact a:hover{text-decoration:underline}
   .foot-contact svg{width:16px;height:16px;fill:currentColor;flex:0 0 16px}
 
+  /* a profile with no portrait yet: drop the image column rather than leave a gap */
+  .profile.no-photo{grid-template-columns:1fr}
+
+  /* an honours list inside a profile */
+  .dist-head{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+             color:var(--muted);margin:1.7rem 0 .75rem}
+  .distinctions{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.45rem}
+  .distinctions li{font-size:.92rem;color:var(--ink);line-height:1.5;
+                   padding-left:1.15rem;position:relative}
+  .distinctions li::before{content:"";position:absolute;left:0;top:.58em;width:5px;height:5px;
+                           background:var(--yellow);border-radius:50%}
+
   /* ---------- responsive overrides (must come after the component rules) ---------- */
   @media(max-width:1000px){
     .houses{grid-template-columns:repeat(2,1fr)}
@@ -1002,6 +1014,28 @@
             <p>Nazem Alkudsi brings four decades at the heart of global capital, and the conviction that the forces shaping the world are never purely financial: they are cultural, political and spiritual.</p>
             <p>He spent nearly twenty years at the Abu Dhabi Investment Authority, managing portfolios from Silicon Valley through the dot-com era to Tokyo during Japan&rsquo;s lost decade, before serving as Chief Executive of Invest AD, deploying sovereign capital across the Middle East, North Africa and frontier markets. Throughout that career he observed that the most consequential influences on nations and markets were rooted in belief and culture, yet were rarely discussed in the rooms where decisions were made.</p>
             <p>Through his writing at Long Arc News he examines how belief systems drive the behaviour of nations, and why some institutions think in generations while others struggle to see beyond the quarter. At HOFAC he brings a cross-cultural view of how faith and values meet economics and public life, and a long view of what it takes to build an institution meant to endure.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile no-photo">
+        <div>
+          <p class="name">Reverend Mother Agn&egrave;s-Mariam of the Cross</p>
+          <p class="role">Advisor to The House</p>
+          <p class="offices">Abbess of the Monastery of Saint James the Mutilated, Qara, Syria &middot; President of the Association Fils de l&rsquo;Homme</p>
+          <div class="bio">
+            <p>Born Fadia Laham in Lebanon to a Palestinian father from Nazareth and a Lebanese mother, Mother Agn&egrave;s-Mariam has been a Discalced Carmelite since 1971 and lived cloistered for more than twenty years. In 2000 she founded the Antiochian Order of Unity and became Abbess of the sixth-century monastery of Saint James the Mutilated at Qara in Syria.</p>
+            <p>She holds a doctorate in religious sciences from PSL University in Paris and a diploma from the &Eacute;cole Pratique des Hautes &Eacute;tudes, and has given four decades to the preservation of Arab-Christian heritage. She founded the Antiochian Institute in 1993 and La Maison d&rsquo;Antioche in 1995, was invited by the Louvre as an expert on the reconstruction of the Assyrian fresco of Tel Barsib, directed the international restoration of her monastery and its eleventh- and twelfth-century frescoes, and has overseen the restoration of more than 350 Arab-Christian icons.</p>
+            <p>Her interfaith work treats mysticism as common ground between Christianity and Islam, Hinduism, Jainism, Buddhism and the Chinese traditions, an approach formed in part during the years she spent in India before entering Carmel. Through the Association Fils de l&rsquo;Homme, founded in Lebanon and France in 2016, she directs humanitarian relief across Syria, Lebanon and beyond.</p>
+            <p class="dist-head">Distinctions</p>
+            <ul class="distinctions">
+              <li>Knight of the French Order of National Merit</li>
+              <li>Nominated for the Nobel Peace Prize in 2014 and 2015 for her work on reconciliation in Syria</li>
+              <li>FEMIDA Prize, Russian Federation</li>
+              <li>Nominee, The Public Peace Prize</li>
+              <li>Cross of Merit, Hungarian Knights of Malta</li>
+              <li>Honorary doctorate conferred by Arab tribes tracing their lineage to the Prophet Muhammad</li>
+            </ul>
           </div>
         </div>
       </div>
