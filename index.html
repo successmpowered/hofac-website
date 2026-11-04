@@ -270,8 +270,12 @@
 
   /* ---------- declaration ---------- */
   .decl{max-width:44rem;margin:0 auto}
-  .decl-open{font-size:1.45rem;line-height:1.45;font-weight:300;color:var(--blue);
-             border-left:3px solid var(--yellow);padding:.2rem 0 .2rem 1.5rem;margin-bottom:2.2rem}
+  /* .decl p is (0,1,1) and was overriding the quote's own margin, so these are
+     scoped to .decl to win the cascade */
+  .decl .decl-open{font-size:1.45rem;line-height:1.45;font-weight:300;color:var(--blue);
+             border-left:3px solid var(--yellow);padding:.2rem 0 .2rem 1.5rem;margin-bottom:0}
+  .decl .decl-attrib{border-left:3px solid var(--yellow);padding:.1rem 0 .4rem 1.5rem;
+             margin-bottom:2.4rem;font-size:.95rem;font-weight:500;color:var(--muted)}
   .decl p{margin-bottom:1.15rem;line-height:1.75}
   .decl .emphatic{font-weight:500;color:var(--blue)}
   .signatories{max-width:44rem;margin:0 auto;padding-top:2rem;border-top:1px solid var(--line)}
@@ -777,6 +781,7 @@
     <div class="wrap">
       <div class="decl prose">
         <p class="decl-open">&ldquo;The world suffers a lot, not just because of the violence of the bad people, but because of the silence of the good people.&rdquo;</p>
+        <p class="decl-attrib">&mdash; Napoleon Bonaparte</p>
 
         <p class="emphatic">We must speak when the public cannot. This is why HOFAC was formed.</p>
 
