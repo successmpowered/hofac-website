@@ -1,0 +1,25 @@
+# Files in the repository root that must not be published.
+# wrangler.jsonc uploads "./" as the site, so anything not listed here is public.
+
+# Version control
+.git
+.gitignore
+.assetsignore
+
+# Project files
+README.md
+wrangler.jsonc
+
+# Tooling and local state
+.wrangler
+node_modules
+.dev.vars
+.env
+.env.*
+
+# OS and editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode
+.idea
